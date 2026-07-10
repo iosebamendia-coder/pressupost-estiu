@@ -77,9 +77,9 @@
 
   /* TABLE */
   table { width:100%; border-collapse:collapse; }
-  /* Taules de categoria: scroll lateral al mòbil si no hi caben */
-  .taula-cat { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
-  .taula-cat thead, .taula-cat tbody { display:table; width:100%; min-width:430px; }
+  /* Contenidor amb scroll lateral per a taules amples al mòbil */
+  .taula-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .taula-scroll table { min-width:430px; }
   th { padding:7px 11px; text-align:left; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); background:#faf9f7; border-bottom:1px solid var(--border); }
   th:nth-last-child(-n+2), td:nth-last-child(-n+2) { text-align:right; }
   td { padding:8px 11px; border-bottom:1px solid #f0ede8; vertical-align:middle; }
@@ -1456,11 +1456,16 @@ ALL_KEYS.forEach(renderTable);
 renderComptes();
 recalc();
 
-// Activar scroll lateral a les taules de categoria (totes menys ingressos)
+// Embolicar les taules de categoria en un contenidor scrollable (totes menys ingressos)
 ALL_KEYS.filter(k => k !== 'ingressos').forEach(k => {
   const tb = document.getElementById('tbody-'+k);
   const taula = tb && tb.closest('table');
-  if (taula) taula.classList.add('taula-cat');
+  if (taula && !taula.parentElement.classList.contains('taula-scroll')) {
+    const wrap = document.createElement('div');
+    wrap.className = 'taula-scroll';
+    taula.parentNode.insertBefore(wrap, taula);
+    wrap.appendChild(taula);
+  }
 });
 
 // Registrar Service Worker (PWA)
