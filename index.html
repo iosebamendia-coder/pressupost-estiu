@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2d5a8e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAGlElEQVR4nOVbS4sdRRT+ujqgCxEfuJitzs6diIoRE7JQdKEYE8YR0YlJQIKY+EhcBGU0DKhZREVCwIlMBsYxGEWyEFxofGBUEHfuov9AcSGii67rovt0nzp1qrr6dt8bx/mg4Xbdrur6vvOoqu6uDFPEvpVLo9Rrlxdms0n2hTDRm0jCtiiS65o8d84nJcjgjXLSkrC1NrkdY4x7zgQZUozBGiLinLQkbG0HDzC5OG8EITGGEKJ3AzHikvCogwdk0gMqQYYWopcA+1YujYg4tzYRl4T7eAAJwstJDJPnY4swViVpdWnxkSJGeX2HHJAzSzPSUgguAtDdGzoLwMmHiMdIp3iBF/+KGJoQ44jQSQDN5a0tPOKc9Dh5IBT/QCMGF0LzhlQRkgWQ5DWra8T9PNAugBwC1fjPjeoNXUVIEiBGXlrdF2aAEKhIcaLv37/fq/fE56udRWgVQCOvuXyMOCc9SkiEWSABGmNw9oEDrfX3XFhLFiEqQBt5zeraHGAUyQkanKzPxPho58HWuoRUEYICyGwfIy+tXgtSKKNCxxxAYny8+9nWehIkQmx02BJrgJOvyyLkQ8RD4TBp8HvJxRVB9QByfTnUaeQ1q0viTjh0HAaNyXF+/khrnRD2XFir2jFqKBhZgcc94JL3y5gYhfXIW1s4+cH1Fv3wr+3nMe6krPCW6MEQkHFfNqCUVeTpd3h2yNtJI+VZZwyMrAXdWc4vvHtI1yeQ68tkFiNPVqytWxT1Qf9pB7+Oe8UQoH5wL4h4gB/3ABgpkRjVqbGtrR1aIElwiwxB3doCpmpLTrCc+8nY1xoaCYtQzPvJ0nrkKR/Q9eGjuY5Eu/e9xbHIP/rpuzoX5gWeB/DYl9Z3xPBCQiTGQpkxdkhsxpjaen1A/ScvoLbr+yQ14ljWf87nJ8vm/MwzD3rWpRFDO3wvKe93z/LLnYjPnT+ZJjTgJj9JRgN3fS8xKpZfe26XQ5z+kwe1rQ2nXUTY/ck7er8t63cVBtEkyIe9WDauvaPQEyMArL8wh0deX/fCgeObtx8DAGw7tF6KIP43Jq/zwWdPLnr1d354AlluYEzZPnd7qi8RnQpL8NjXwgFwVZb44MV5AMCupVXPyy6eXMDWp1erjlaLGDSLIWrPoJwp3nfmGIwx4llAPONr6CSABm59bcao4dzRx/HQK6fx/am9ddkdT52uO10SaJIgJ8TLgEaQcbFFi/9Q9k+FnCRxPHxsBRdPLtTkb9vvDlXG5PXsjTyBh4M2m0vqkzIaAG2rQZH9pft3ec4PADMzpasDJXFntWbyppNMBDqPgV8LwPOQWEj0DgHp/pr1Z2bcOrfuPVV3vG5HtCs7LJNiaFzvit4ChPDVm/NeGXd3mS94LOuTl7Sk1hWDC/DF8V1e2Z0HVtjw5yZLa20w4U0DQ6w4Hew4fM45p6FNQzM1Hm7F1xUTC4Fth9aDwyChtLztFcN9MREBtj9/NvifMXnp5qjGdDaR4W95poWJeQAAd2JTlVGCy4xx4s95Dli99SkFmawovQUgC3KSdC4nQpKINk/nr7w4sqqcBMmqh5x9wycqAHdX6rBHsiWBcS8YWducF9YjKt/3pVqfQqcWh4nVFlZmeWE2IyV5HPJX0l3BO8LLnIVLbvxDkK8JMkJj9ykX/CoP6h0CPJZ5cgP0hMenqFpbZT2WGEVISPfvsxACOuYAGRKAv+JzBKnCI8uNR1gLHE6c6vH/iLzWL+n+qQgKwBtprKjHu0O6aKzPQUkxGo/ipajz9YfzbUC79Xn8hxIrKl7Q8kAMMiPzm5o81z9YqKyT5fw/96C2Q+S1zC+tH+23iP/lhdksKQS80cBZxjbDII0IJi+vv3TtWkrzrbjpt/maPIGTkX1Nyf4ETwBtXJcPR2Ry+/lK/fn7UPjl+nW1/Oa/99f9CcW+lv05nDelbU+HqOzH4sQgxIbGLdlBz/qh4Y/eEkeTIPeC7/56beIE+uKn0VtAAaAAbr/iiEdeg+MPPBlybATyEj/884Y/01S+EYh4gMHXfyxOrodTwLd/LgEA7r5mMTiL9ErJC/6P0L4QCX4kdePxueTdHRsBO25YUj+SunyPYv4jCArw6+GzU9mzMw2ErA9sEg8Y+0tRwkbNBzHLE5I8YCOGQwp5YMz9Al/+3u1rjWlh+3WvAkj/VB4YaMfI5Zow3XX1S+6yedI7Rgipe4ZoJtYXW686Wv++7HuGODbtrjGOTb1vkGPT7hyV2LR7hzVshN3j/wLg/U4MzszFFAAAAABJRU5ErkJggg==">
+<title>Pressupost Estiu 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f7f6f2; --surface: #ffffff; --border: #e2dfd8;
+    --text: #1a1a18; --muted: #6b6860;
+    --accent: #2d5a8e; --accent-light: #e8f0fb;
+    --green: #2e7d5c; --green-light: #e8f5ef;
+    --red: #b94040; --red-light: #fbeaea;
+    --orange: #c47c2b; --orange-light: #fdf3e3;
+    --normandia: #4a5c8a; --normandia-light: #eef0f8;
+    --delta: #3d7a5e; --delta-light: #eaf4ef;
+  }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.5; min-height:100vh; padding-bottom:60px; }
+
+  /* HEADER */
+  .header { background:var(--accent); color:white; padding:20px 32px 16px; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.15); }
+  .header-inner { max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .header h1 { font-family:'Playfair Display',serif; font-size:20px; font-weight:600; }
+  .header .subtitle { font-size:11px; opacity:.7; margin-top:2px; }
+  .header-right { display:flex; align-items:center; gap:24px; }
+  .header-stat { text-align:right; }
+  .header-stat .lbl { font-size:10px; opacity:.7; text-transform:uppercase; letter-spacing:.08em; }
+  .header-stat .val { font-size:22px; font-weight:800; line-height:1.1; }
+  .val.pos { color:#7ef5c0; } .val.neg { color:#f5a0a0; }
+  .btn-print { background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:white; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-family:'Inter',sans-serif; transition:background .15s; }
+  .btn-print:hover { background:rgba(255,255,255,.28); }
+
+  /* SAVE BAR */
+  .save-bar { background:#1a2f4a; color:white; padding:6px 20px; font-size:12px; }
+  .save-bar-inner { max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .save-status { display:flex; align-items:center; gap:6px; opacity:.85; }
+  .save-dot { width:7px; height:7px; border-radius:50%; background:#7ef5c0; flex-shrink:0; }
+  .save-dot.pendent { background:#f5d07e; animation:blink 1s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .save-btns { display:flex; gap:6px; flex-wrap:wrap; }
+  .btn-sa { padding:4px 10px; border-radius:5px; border:1px solid rgba(255,255,255,.25); background:rgba(255,255,255,.08); color:white; font-family:'Inter',sans-serif; font-size:11px; cursor:pointer; transition:background .15s; }
+  .btn-sa:hover { background:rgba(255,255,255,.22); }
+  .btn-sa.danger:hover { background:#b94040; border-color:#b94040; }
+
+  /* TABS */
+  .tabs { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:79px; z-index:90; }
+  .tabs-inner { max-width:980px; margin:0 auto; display:flex; overflow-x:auto; }
+  .tab-btn { padding:11px 18px; border:none; background:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; font-weight:500; color:var(--muted); border-bottom:2px solid transparent; white-space:nowrap; transition:all .15s; }
+  .tab-btn:hover { color:var(--accent); }
+  .tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+  .tab-badge { display:inline-block; background:var(--red); color:white; border-radius:8px; font-size:9px; padding:1px 5px; margin-left:4px; vertical-align:middle; }
+
+  /* MAIN */
+  .main { max-width:980px; margin:0 auto; padding:20px 16px; }
+  .panel { display:none; } .panel.active { display:block; }
+
+  /* ALERTA DESBORDAMENT */
+  .alert-banner { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:10px 16px; margin-bottom:16px; font-size:13px; display:flex; gap:10px; align-items:flex-start; }
+  .alert-banner .alert-icon { font-size:18px; flex-shrink:0; }
+  .alert-banner ul { margin:4px 0 0 16px; }
+
+  /* CARDS */
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:10px; margin-bottom:18px; overflow:hidden; }
+  .card-header { padding:13px 18px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); background:var(--bg); }
+  .card-title { font-weight:600; font-size:14px; display:flex; align-items:center; gap:7px; }
+  .card-total { font-weight:700; font-size:15px; }
+  .ct-income { color:var(--green); } .ct-expense { color:var(--red); }
+  .ct-norm { color:var(--normandia); } .ct-delta { color:var(--delta); }
+
+  /* TABLE */
+  table { width:100%; border-collapse:collapse; }
+  th { padding:7px 11px; text-align:left; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); background:#faf9f7; border-bottom:1px solid var(--border); }
+  th:nth-last-child(-n+2), td:nth-last-child(-n+2) { text-align:right; }
+  td { padding:8px 11px; border-bottom:1px solid #f0ede8; vertical-align:middle; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#faf9f7; }
+  tr.over-budget td { background:#fff8f8; }
+  tr.over-budget td:first-child { border-left:3px solid var(--red); padding-left:8px; }
+
+  input[type="number"], input[type="text"] { border:1px solid var(--border); border-radius:5px; padding:5px 7px; font-family:'Inter',sans-serif; font-size:13px; color:var(--text); background:white; width:100%; transition:border-color .15s; }
+  input[type="number"]:focus, input[type="text"]:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(45,90,142,.1); }
+  select { border:1px solid var(--border); border-radius:5px; padding:5px 6px; font-family:'Inter',sans-serif; font-size:12px; color:var(--text); background:white; cursor:pointer; }
+  .num-cell { width:130px; }
+  .type-cell { width:80px; }
+
+  .btn-add { display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 14px; margin:9px 11px; border:1px dashed var(--border); border-radius:6px; background:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); transition:all .15s; width:calc(100% - 22px); }
+  .btn-add:hover { border-color:var(--accent); color:var(--accent); background:var(--accent-light); }
+  .btn-del { background:none; border:none; cursor:pointer; color:#ccc; font-size:16px; padding:0 3px; transition:color .15s; }
+  .btn-del:hover { color:var(--red); }
+  .over-icon { font-size:12px; margin-left:3px; }
+
+  /* RESUM */
+  .resum-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; margin-bottom:20px; }
+  .rbox { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; }
+  .rbox .lbl { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:5px; }
+  .rbox .val2 { font-size:24px; font-weight:800; line-height:1.1; }
+  .rbox .sub2 { font-size:12px; color:var(--muted); margin-top:4px; }
+  .rbox.rgreen { border-color:#b8e0cf; background:var(--green-light); }
+  .rbox.rgreen .val2 { color:var(--green); }
+  .rbox.rred { border-color:#e8bbbb; background:var(--red-light); }
+  .rbox.rred .val2 { color:var(--red); }
+  .rbox.rsaldo-pos { border-color:#86cba8; background:#d0eedf; }
+  .rbox.rsaldo-pos .val2 { color:#1a5c3a; }
+  .rbox.rsaldo-neg { border-color:#e8bbbb; background:#fbd8d8; }
+  .rbox.rsaldo-neg .val2 { color:#8b2020; }
+  .rbox.rblue { border-color:#b3c8e8; background:var(--accent-light); }
+  .rbox.rblue .val2 { color:var(--accent); }
+
+  /* PROGRÉS TEMPORAL */
+  .temporal-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; margin-bottom:18px; }
+  .temporal-title { font-weight:600; font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+  .temporal-bar-wrap { position:relative; background:#eee; border-radius:6px; height:20px; overflow:hidden; margin-bottom:6px; }
+  .temporal-bar-time { position:absolute; height:100%; background:#c8d8ee; border-radius:6px; transition:width .4s; }
+  .temporal-bar-spent { position:absolute; height:100%; background:var(--accent); border-radius:6px; transition:width .4s; opacity:.85; }
+  .temporal-bar-labels { display:flex; justify-content:space-between; font-size:11px; color:var(--muted); }
+  .temporal-status { font-size:13px; margin-top:8px; font-weight:500; }
+  .temporal-ok { color:var(--green); } .temporal-ko { color:var(--red); }
+
+  /* DESGLOSSAMENT */
+  .desglos-row { display:flex; justify-content:space-between; align-items:center; padding:9px 0; border-bottom:1px solid var(--border); font-size:13px; }
+  .desglos-row:last-child { border-bottom:none; }
+  .desglos-nom { display:flex; align-items:center; gap:8px; }
+  .desglos-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+  .desglos-prevista { font-size:12px; color:var(--muted); }
+  .desglos-real { font-weight:600; }
+  .diff-ok { color:var(--green); font-size:12px; } .diff-ko { color:var(--red); font-size:12px; }
+  .pbar-wrap { background:var(--border); border-radius:4px; height:5px; margin-top:6px; overflow:hidden; }
+  .pbar { height:100%; border-radius:4px; transition:width .3s; }
+  .pbar-lbl { font-size:11px; color:var(--muted); margin-top:2px; text-align:right; }
+
+  /* BANC */
+  .banc-box { background:var(--surface); border:2px solid var(--accent); border-radius:10px; padding:16px 20px; margin-bottom:18px; display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+  .banc-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:8px; }
+  .banc-comptes { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .banc-item { display:flex; align-items:center; gap:5px; }
+  .banc-item input[type="text"] { width:120px; font-size:12px; }
+  .banc-item input[type="number"] { width:105px; font-size:13px; font-weight:600; text-align:right; }
+  .btn-add-banc { font-size:12px; padding:4px 9px; border:1px dashed var(--accent); border-radius:5px; background:var(--accent-light); color:var(--accent); cursor:pointer; font-family:'Inter',sans-serif; transition:all .15s; }
+  .btn-add-banc:hover { background:var(--accent); color:white; }
+  .banc-total-block { text-align:right; flex-shrink:0; margin-left:auto; }
+  .banc-total-lbl { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; margin-bottom:3px; }
+  .banc-total-val { font-size:28px; font-weight:800; color:var(--accent); }
+
+  /* DESPESES FIXES - selector tipus */
+  .tipus-badge { display:inline-block; font-size:10px; font-weight:600; padding:2px 6px; border-radius:4px; }
+  .tipus-mensual { background:#e8f0fb; color:var(--accent); }
+  .tipus-puntual { background:#fdf3e3; color:var(--orange); }
+
+  /* MODAL ESBORRAR */
+  .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:999; display:flex; align-items:center; justify-content:center; padding:16px; }
+  .modal-box { background:white; border-radius:12px; padding:28px 32px; max-width:400px; width:100%; box-shadow:0 8px 40px rgba(0,0,0,.25); }
+  .modal-box h3 { font-size:17px; font-weight:700; color:var(--red); margin-bottom:8px; }
+  .modal-box p { font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.5; }
+  .modal-box input[type="text"] { border:1px solid var(--border); border-radius:6px; padding:8px 10px; font-size:14px; width:100%; margin-bottom:16px; font-family:'Inter',sans-serif; }
+  .modal-box input[type="text"]:focus { outline:none; border-color:var(--red); box-shadow:0 0 0 2px rgba(185,64,64,.15); }
+  .modal-btns { display:flex; gap:8px; justify-content:flex-end; }
+  .btn-cancel-modal { padding:7px 16px; border-radius:6px; border:1px solid var(--border); background:white; font-family:'Inter',sans-serif; font-size:13px; cursor:pointer; }
+  .btn-cancel-modal:hover { background:var(--bg); }
+  .btn-confirm-del { padding:7px 16px; border-radius:6px; border:none; background:#ccc; color:white; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:not-allowed; transition:background .15s; }
+  .btn-confirm-del.actiu { background:var(--red); cursor:pointer; }
+
+  .viatges-countdown { display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; }
+  .countdown-pill { display:flex; align-items:center; gap:8px; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:500; }
+  .countdown-pill.norm { background:var(--normandia-light); border:1px solid #c5cfe8; color:var(--normandia); }
+  .countdown-pill.delta { background:var(--delta-light); border:1px solid #b8d8c8; color:var(--delta); }
+  .countdown-pill.past { background:#f5f5f5; border:1px solid #ddd; color:#999; }
+  .countdown-num { font-size:18px; font-weight:800; line-height:1; }
+
+  /* NOTES TOOLTIP */
+  .notes-wrap { position:relative; display:inline-flex; align-items:center; gap:4px; }
+  .notes-icon { color:var(--muted); cursor:help; font-size:13px; flex-shrink:0; }
+  .notes-text { font-size:11px; color:var(--muted); font-style:italic; max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+  /* INGRESSOS MÒBIL */
+  @media (max-width:640px) {
+    .ingressos-desktop { display:none; }
+    .ingressos-mobile { display:block; }
+  }
+  @media (min-width:641px) {
+    .ingressos-mobile { display:none; }
+    .ingressos-desktop { display:table-row; }
+  }
+
+  /* ENTRADA RÀPIDA */
+  .fab { position:fixed; bottom:24px; right:24px; z-index:500; width:52px; height:52px; border-radius:50%; background:var(--accent); color:white; border:none; font-size:26px; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.25); display:flex; align-items:center; justify-content:center; transition:transform .15s, background .15s; }
+  .fab:hover { transform:scale(1.08); background:#1e4070; }
+  .fab.fab-income { background:var(--green); }
+  .fab.fab-income:hover { background:#1d5c3e; }
+
+  .entrada-overlay { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:600; display:flex; align-items:flex-end; justify-content:center; padding:0; }
+  @media (min-width:500px) { .entrada-overlay { align-items:center; padding:16px; } }
+  .entrada-box { background:white; border-radius:16px 16px 0 0; padding:24px 24px 32px; width:100%; max-width:460px; box-shadow:0 -4px 30px rgba(0,0,0,.2); }
+  @media (min-width:500px) { .entrada-box { border-radius:16px; } }
+  .entrada-title { font-size:16px; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+  .entrada-toggle { display:flex; background:#f0f0ee; border-radius:8px; padding:3px; margin-bottom:16px; }
+  .entrada-toggle button { flex:1; padding:7px; border:none; border-radius:6px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:pointer; background:none; color:var(--muted); transition:all .15s; }
+  .entrada-toggle button.actiu-despesa { background:var(--red); color:white; }
+  .entrada-toggle button.actiu-ingres { background:var(--green); color:white; }
+  .entrada-field { margin-bottom:12px; }
+  .entrada-field label { display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:5px; }
+  .entrada-field select, .entrada-field input { width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-family:'Inter',sans-serif; font-size:14px; color:var(--text); background:white; }
+  .entrada-field input:focus, .entrada-field select:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(45,90,142,.12); }
+  .entrada-import { font-size:22px !important; font-weight:700 !important; text-align:right; }
+  .btn-entrada-ok { width:100%; padding:13px; border:none; border-radius:10px; background:var(--accent); color:white; font-family:'Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; margin-top:4px; transition:background .15s; }
+  .btn-entrada-ok:hover { background:#1e4070; }
+  .btn-entrada-ok.ok-ingres { background:var(--green); }
+  .btn-entrada-ok.ok-ingres:hover { background:#1d5c3e; }
+  .btn-entrada-cancel { width:100%; padding:9px; border:none; border-radius:8px; background:none; color:var(--muted); font-family:'Inter',sans-serif; font-size:13px; cursor:pointer; margin-top:6px; }
+  .entrada-feedback { display:none; position:fixed; bottom:90px; right:24px; z-index:700; background:#1a2f4a; color:white; padding:10px 16px; border-radius:10px; font-size:13px; font-weight:500; box-shadow:0 4px 16px rgba(0,0,0,.25); }
+
+  /* IMPRESSIÓ */
+  @media print {
+    .save-bar, .tabs, .btn-add, .btn-del, .btn-print, .banc-item button, .btn-add-banc { display:none !important; }
+    .header { position:static; box-shadow:none; }
+    .tabs { display:none; }
+    .panel { display:block !important; page-break-inside:avoid; }
+    input, select { border:none; background:transparent; pointer-events:none; }
+    .card { border:1px solid #ccc; page-break-inside:avoid; }
+    body { background:white; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:600px) {
+    .header-inner { flex-direction:column; align-items:flex-start; }
+    .header-right { flex-wrap:wrap; }
+    th, td { padding:6px 7px; }
+    .num-cell { width:105px; }
+    .type-cell { width:70px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BOTÓ FLOTANT -->
+<button class="fab" id="fab-btn" onclick="obrirEntrada()" title="Registrar despesa o ingrés">＋</button>
+<div class="entrada-feedback" id="entrada-feedback"></div>
+
+<!-- PANELL ENTRADA RÀPIDA -->
+<div class="entrada-overlay" id="entrada-overlay" style="display:none" onclick="if(event.target===this)tancarEntrada()">
+  <div class="entrada-box">
+    <div class="entrada-title" id="entrada-title">📝 Registrar moviment</div>
+
+    <div class="entrada-toggle">
+      <button id="toggle-despesa" class="actiu-despesa" onclick="setTipusEntrada('despesa')">📤 Despesa</button>
+      <button id="toggle-ingres" onclick="setTipusEntrada('ingres')">💰 Ingrés</button>
+    </div>
+
+    <div class="entrada-field" id="camp-bloc">
+      <label>Bloc</label>
+      <select id="entrada-bloc" onchange="actualitzarSubbloc()">
+        <option value="despeses">🏠 Despeses fixes</option>
+        <option value="normandia">🇫🇷 Normandia</option>
+        <option value="delta">🌊 Delta de l'Ebre</option>
+        <option value="altres">🛒 Altres</option>
+      </select>
+    </div>
+
+    <div class="entrada-field" id="camp-subbloc" style="display:none">
+      <label>Subcategoria Normandia</label>
+      <select id="entrada-subbloc">
+        <option value="hotels">🏨 Allotjament</option>
+        <option value="gasolina">⛽ Gasolina i transport</option>
+        <option value="apats">🍽️ Àpats</option>
+        <option value="entrades">🎟️ Entrades i visites</option>
+        <option value="compres">🛍️ Compres i diversos</option>
+      </select>
+    </div>
+
+    <div class="entrada-field">
+      <label>Import (€)</label>
+      <input type="number" id="entrada-import" class="entrada-import" min="0" step="0.01" placeholder="0,00">
+    </div>
+
+    <div class="entrada-field">
+      <label>Nota (opcional)</label>
+      <input type="text" id="entrada-nota" placeholder="p.ex. sopar a Bayeux, gasolina AP-7...">
+    </div>
+
+    <button class="btn-entrada-ok" id="btn-entrada-ok" onclick="confirmarEntrada()">Afegir despesa</button>
+    <button class="btn-entrada-cancel" onclick="tancarEntrada()">Cancel·lar</button>
+  </div>
+</div>
+
+<!-- MODAL ESBORRAR -->
+<div class="modal-overlay" id="modal-esborrar" style="display:none" onclick="if(event.target===this)tancarModal()">
+  <div class="modal-box">
+    <h3>🗑️ Esborrar totes les dades</h3>
+    <p>Aquesta acció <strong>no es pot desfer</strong>. S'esborraran totes les dades guardades.<br><br>Escriu <strong>ESBORRAR</strong> per confirmar:</p>
+    <input type="text" id="modal-input-esborrar" placeholder="Escriu ESBORRAR aquí" oninput="validarModal(this.value)" autocomplete="off" autocorrect="off" spellcheck="false">
+    <div class="modal-btns">
+      <button class="btn-cancel-modal" onclick="tancarModal()">Cancel·lar</button>
+      <button class="btn-confirm-del" id="btn-confirm-del" onclick="confirmarEsborrar()">Esborrar tot</button>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <h1>☀️ Pressupost Estiu 2026</h1>
+      <div class="subtitle">Juliol – 31 d'agost · Previst vs Real</div>
+    </div>
+    <div class="header-right">
+      <div class="header-stat">
+        <div class="lbl">Quedarà al 31 ag.</div>
+        <div class="val" id="header-saldo-prev">0,00 €</div>
+      </div>
+      <div class="header-stat">
+        <div class="lbl">Saldo real ara</div>
+        <div class="val pos" id="header-saldo-real">0,00 €</div>
+      </div>
+      <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+  </div>
+</div>
+
+<div class="save-bar">
+  <div class="save-bar-inner">
+    <div class="save-status">
+      <div class="save-dot" id="save-dot"></div>
+      <span id="save-txt">Carregant...</span>
+    </div>
+    <div class="save-btns">
+      <button class="btn-sa" onclick="exportarJSON()">⬇ Exportar còpia JSON</button>
+      <label class="btn-sa" style="cursor:pointer">⬆ Importar còpia<input type="file" accept=".json" style="display:none" onchange="importarJSON(this)"></label>
+      <button class="btn-sa" onclick="exportarCSV()">📊 Exportar Excel/CSV</button>
+      <button class="btn-sa" onclick="imprimirResum()">🖨️ PDF resum</button>
+      <button class="btn-sa danger" onclick="obrirModalEsborrar()">🗑 Esborrar tot</button>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="showTab('resum',this)">📊 Resum</button>
+    <button class="tab-btn" onclick="showTab('ingressos',this)">💰 Ingressos</button>
+    <button class="tab-btn" onclick="showTab('despeses',this)">🏠 Despeses fixes</button>
+    <button class="tab-btn" onclick="showTab('normandia',this)">🇫🇷 Normandia</button>
+    <button class="tab-btn" onclick="showTab('delta',this)">🌊 Delta</button>
+    <button class="tab-btn" onclick="showTab('altres',this)">🛒 Altres</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- RESUM -->
+  <div class="panel active" id="panel-resum">
+
+    <div id="alert-container"></div>
+
+    <!-- BANC -->
+    <div class="banc-box">
+      <div style="flex:1;min-width:240px">
+        <div class="banc-label">🏦 Saldo actual al banc — punt de partida</div>
+        <div class="banc-comptes" id="banc-comptes-list"></div>
+        <button class="btn-add-banc" style="margin-top:10px" onclick="addCompte()">+ Afegir compte</button>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">A partir d'aquí es calcula el que et quedarà al 31 d'agost.</div>
+      </div>
+      <div class="banc-total-block">
+        <div class="banc-total-lbl">Total banc ara</div>
+        <div class="banc-total-val" id="total-banc-display">0,00 €</div>
+      </div>
+    </div>
+
+    <!-- PROGRÉS TEMPORAL -->
+    <div class="temporal-card">
+      <div class="temporal-title">📅 On som en el temps i en la despesa</div>
+      <div class="temporal-bar-wrap">
+        <div class="temporal-bar-time" id="tbar-time" style="width:0%"></div>
+        <div class="temporal-bar-spent" id="tbar-spent" style="width:0%"></div>
+      </div>
+      <div class="temporal-bar-labels">
+        <span>1 juliol</span>
+        <span id="tbar-today-lbl" style="font-weight:600;color:var(--accent)"></span>
+        <span>31 agost</span>
+      </div>
+      <div class="temporal-status" id="temporal-status"></div>
+      <div class="viatges-countdown" id="viatges-countdown"></div>
+    </div>
+
+    <!-- CAIXES RESUM -->
+    <div class="resum-grid">
+      <div class="rbox rgreen">
+        <div class="lbl">🏦 Banc + Ingressos futurs</div>
+        <div class="val2" id="r-total-positiu">0,00 €</div>
+        <div class="sub2">Banc: <span id="r-banc">0,00 €</span> · Ingressos prev.: <span id="r-ing-prev">0,00 €</span></div>
+      </div>
+      <div class="rbox rred">
+        <div class="lbl">📤 Total despeses previstes</div>
+        <div class="val2" id="r-dep-prev">0,00 €</div>
+        <div class="sub2">Gastat fins ara: <span id="r-dep-real">0,00 €</span></div>
+      </div>
+      <div class="rbox rblue" id="saldo-box">
+        <div class="lbl">🏁 Et quedarà al 31 d'agost</div>
+        <div class="val2" id="r-saldo-prev">0,00 €</div>
+        <div class="sub2">Saldo real ara: <span id="r-saldo-real">0,00 €</span></div>
+      </div>
+    </div>
+
+    <!-- DESGLOSSAMENT -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📋 Desglossament per blocs</div>
+      </div>
+      <div style="padding:4px 20px 16px">
+        <div id="desglos-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INGRESSOS -->
+  <div class="panel" id="panel-ingressos">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">💰 Ingressos futurs (juliol–agost)</div>
+        <div class="card-total ct-income" id="hd-ingressos">0,00 €</div>
+      </div>
+      <table>
+        <thead><tr class="ingressos-desktop">
+          <th>Concepte</th><th>Mes</th>
+          <th class="num-cell" style="color:#2d5a8e">Pep previst</th>
+          <th class="num-cell" style="color:#3d7a5e">Dona previst</th>
+          <th class="num-cell" style="color:#2d5a8e">Pep real</th>
+          <th class="num-cell" style="color:#3d7a5e">Dona real</th>
+          <th style="width:30px"></th>
+        </tr></thead>
+        <tbody id="tbody-ingressos"></tbody>
+      </table>
+      <button class="btn-add" onclick="addRow('ingressos')">+ Afegir ingrés</button>
+      <div style="padding:8px 12px;font-size:12px;color:var(--muted);background:#faf9f7;border-top:1px solid var(--border)">
+        El total suma automàticament Pep + Dona en cada fila
+      </div>
+    </div>
+  </div>
+
+  <!-- DESPESES FIXES -->
+  <div class="panel" id="panel-despeses">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🏠 Despeses fixes (juliol–agost)</div>
+        <div class="card-total ct-expense" id="hd-despeses">0,00 €</div>
+      </div>
+      <table>
+        <thead><tr><th>Concepte</th><th class="type-cell">Tipus</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+        <tbody id="tbody-despeses"></tbody>
+      </table>
+      <button class="btn-add" onclick="addRow('despeses')">+ Afegir despesa fixa</button>
+      <div style="padding:8px 12px;font-size:12px;color:var(--muted);background:#faf9f7;border-top:1px solid var(--border)">
+        ⓘ <strong>Mensual</strong>: es multiplica ×2 automàticament (juliol i agost) · <strong>Puntual</strong>: s'usa l'import tal qual
+      </div>
+    </div>
+  </div>
+
+  <!-- NORMANDIA -->
+  <div class="panel" id="panel-normandia">
+    <div class="card" style="border-color:#c5cfe8">
+      <div class="card-header" style="background:var(--normandia-light)">
+        <div class="card-title">🏨 Allotjament – 3 hotels</div>
+        <div class="card-total ct-norm" id="hd-hotels">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Hotel / Localitat</th><th>Dates / Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-hotels"></tbody></table>
+      <button class="btn-add" onclick="addRow('hotels')">+ Afegir hotel</button>
+    </div>
+    <div class="card" style="border-color:#c5cfe8">
+      <div class="card-header" style="background:var(--normandia-light)">
+        <div class="card-title">⛽ Gasolina i transport</div>
+        <div class="card-total ct-norm" id="hd-gasolina">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-gasolina"></tbody></table>
+      <button class="btn-add" onclick="addRow('gasolina')">+ Afegir transport</button>
+    </div>
+    <div class="card" style="border-color:#c5cfe8">
+      <div class="card-header" style="background:var(--normandia-light)">
+        <div class="card-title">🍽️ Àpats i restaurants</div>
+        <div class="card-total ct-norm" id="hd-apats">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-apats"></tbody></table>
+      <button class="btn-add" onclick="addRow('apats')">+ Afegir àpat</button>
+    </div>
+    <div class="card" style="border-color:#c5cfe8">
+      <div class="card-header" style="background:var(--normandia-light)">
+        <div class="card-title">🎟️ Entrades, visites i activitats</div>
+        <div class="card-total ct-norm" id="hd-entrades">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Visita / Activitat</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-entrades"></tbody></table>
+      <button class="btn-add" onclick="addRow('entrades')">+ Afegir visita</button>
+    </div>
+    <div class="card" style="border-color:#c5cfe8">
+      <div class="card-header" style="background:var(--normandia-light)">
+        <div class="card-title">🛍️ Compres i diversos</div>
+        <div class="card-total ct-norm" id="hd-compres">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-compres"></tbody></table>
+      <button class="btn-add" onclick="addRow('compres')">+ Afegir compra</button>
+    </div>
+    <div class="card" style="border-color:#c5cfe8;background:var(--normandia-light)">
+      <div class="card-header" style="background:#dde3f0;border-color:#c5cfe8">
+        <div class="card-title" style="color:var(--normandia)">🇫🇷 TOTAL NORMANDIA</div>
+        <div class="card-total ct-norm" style="font-size:17px" id="hd-normandia-grand">0,00 €</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELTA -->
+  <div class="panel" id="panel-delta">
+    <div class="card" style="border-color:#b8d8c8">
+      <div class="card-header" style="background:var(--delta-light)">
+        <div class="card-title">🌊 Delta de l'Ebre – Totes les despeses</div>
+        <div class="card-total ct-delta" id="hd-delta">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-delta"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta')">+ Afegir despesa Delta</button>
+    </div>
+  </div>
+
+  <!-- ALTRES -->
+  <div class="panel" id="panel-altres">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🛒 Altres despeses d'estiu</div>
+        <div class="card-total ct-expense" id="hd-altres">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-altres"></tbody></table>
+      <button class="btn-add" onclick="addRow('altres')">+ Afegir despesa</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================
+//  DADES INICIALS
+// ============================
+const DATA = {
+  ingressos: [
+    {desc:'Pensió / jubilació (Pep)',notes:'Juliol',previstPep:0,previstDona:0,realPep:0,realDona:0},
+    {desc:'Pensió / jubilació (Pep)',notes:'Agost',previstPep:0,previstDona:0,realPep:0,realDona:0},
+    {desc:'Sou',notes:'Juliol',previstPep:0,previstDona:0,realPep:0,realDona:0},
+    {desc:'Sou',notes:'Agost',previstPep:0,previstDona:0,realPep:0,realDona:0},
+    {desc:'Paga extra estiu',notes:'',previstPep:0,previstDona:0,realPep:0,realDona:0},
+    {desc:'Altres ingressos',notes:'',previstPep:0,previstDona:0,realPep:0,realDona:0},
+  ],
+  despeses: [
+    {desc:'Electricitat',notes:'',tipus:'mensual',previst:80,real:0},
+    {desc:'Gas',notes:'',tipus:'mensual',previst:30,real:0},
+    {desc:'Telèfon / internet',notes:'',tipus:'mensual',previst:50,real:0},
+    {desc:'Comunitat',notes:'',tipus:'mensual',previst:0,real:0},
+    {desc:'Assegurances',notes:'',tipus:'puntual',previst:0,real:0},
+    {desc:'Alimentació domèstica',notes:'Quan no sou de viatge',tipus:'mensual',previst:300,real:0},
+    {desc:'Farmàcia',notes:'',tipus:'mensual',previst:50,real:0},
+    {desc:'Transport local',notes:'Benzina, aparcament...',tipus:'mensual',previst:80,real:0},
+  ],
+  hotels: [
+    {desc:'Hotel 1',notes:'Normandia – Ruta A',previst:0,real:0},
+    {desc:'Hotel 2',notes:'Normandia – Ruta B',previst:0,real:0},
+    {desc:'Hotel 3',notes:'Normandia – Ruta C',previst:0,real:0},
+  ],
+  gasolina: [
+    {desc:'Gasolina anada (Granollers→Normandia)',notes:'Aprox. ~1.200 km',previst:0,real:0},
+    {desc:'Gasolina tornada (Normandia→Granollers)',notes:'',previst:0,real:0},
+    {desc:'Gasolina desplaçaments interiors',notes:'Visites, excursions',previst:0,real:0},
+    {desc:'Peatges',notes:'Autopistes França/Espanya',previst:0,real:0},
+    {desc:'Pàrquing',notes:'',previst:0,real:0},
+  ],
+  apats: [
+    {desc:'Esmorzars',notes:'Fora o inclosos a l\'hotel',previst:0,real:0},
+    {desc:'Dinars',notes:'',previst:0,real:0},
+    {desc:'Sopars',notes:'',previst:0,real:0},
+    {desc:'Cafès i aperitius',notes:'',previst:0,real:0},
+    {desc:'Supermercats / pícnics',notes:'',previst:0,real:0},
+  ],
+  entrades: [
+    {desc:'Mont-Saint-Michel',notes:'',previst:0,real:0},
+    {desc:'Platges del Desembarcament',notes:'Museus, memorials',previst:0,real:0},
+    {desc:'Bayeux (Tapís)',notes:'',previst:0,real:0},
+    {desc:'Altres museus / visites',notes:'',previst:0,real:0},
+    {desc:'Activitats / excursions',notes:'',previst:0,real:0},
+  ],
+  compres: [
+    {desc:'Souvenirs',notes:'',previst:0,real:0},
+    {desc:'Roba / calçat',notes:'',previst:0,real:0},
+    {desc:'Farmàcia de viatge',notes:'',previst:0,real:0},
+    {desc:'Imprevistos Normandia',notes:'Marge de seguretat',previst:0,real:0},
+  ],
+  delta: [
+    {desc:'Allotjament',notes:'Hotel, càmping, rural...',previst:0,real:0},
+    {desc:'Gasolina anada/tornada',notes:'Aprox. ~250 km',previst:0,real:0},
+    {desc:'Àpats',notes:'',previst:0,real:0},
+    {desc:'Activitats (barques, bicicletes...)',notes:'',previst:0,real:0},
+    {desc:'Entrades i visites',notes:'',previst:0,real:0},
+    {desc:'Compres i divers',notes:'',previst:0,real:0},
+  ],
+  altres: [
+    {desc:'Roba d\'estiu',notes:'',previst:0,real:0},
+    {desc:'Oci local (cines, restaurants)',notes:'',previst:0,real:0},
+    {desc:'Regals',notes:'',previst:0,real:0},
+    {desc:'Salut / metge',notes:'',previst:0,real:0},
+    {desc:'Imprevistos generals',notes:'Marge de seguretat',previst:0,real:0},
+  ],
+};
+
+let COMPTES = [
+  {nom:'Compte corrent',saldo:0},
+  {nom:'Estalvis',saldo:0},
+];
+
+// ============================
+//  FORMAT
+// ============================
+function fmt(n) {
+  const s = Math.abs(n).toLocaleString('ca-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+  return (n < 0 ? '−' : '') + s + ' €';
+}
+function fmtSign(n) {
+  const s = Math.abs(n).toLocaleString('ca-ES',{minimumFractionDigits:2,maximumFractionDigits:2});
+  return (n >= 0 ? '+' : '−') + s + ' €';
+}
+
+// ============================
+//  BANC
+// ============================
+function totalBanc() { return COMPTES.reduce((s,c)=>s+(c.saldo||0),0); }
+
+function renderComptes() {
+  const el = document.getElementById('banc-comptes-list');
+  el.innerHTML = '';
+  COMPTES.forEach((c,i) => {
+    const div = document.createElement('div');
+    div.className = 'banc-item';
+    div.innerHTML = `
+      <input type="text" value="${esc(c.nom)}" placeholder="Nom compte" style="width:120px;font-size:12px"
+        oninput="COMPTES[${i}].nom=this.value;guardarDades()">
+      <input type="number" value="${c.saldo||''}" min="0" step="0.01" placeholder="0,00" style="width:130px;text-align:right;font-weight:600"
+        oninput="COMPTES[${i}].saldo=parseFloat(this.value)||0;recalc()">
+      <button class="btn-del" onclick="delCompte(${i})">×</button>
+    `;
+    el.appendChild(div);
+  });
+  recalc();
+}
+function addCompte() { COMPTES.push({nom:'Compte nou',saldo:0}); renderComptes(); }
+function delCompte(i) { COMPTES.splice(i,1); renderComptes(); }
+
+// ============================
+//  TAULES
+// ============================
+function esc(s) { return String(s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
+function makeRow(key, idx) {
+  const d = DATA[key][idx];
+
+  // INGRESSOS: taula especial amb columnes Pep/Dona — versió responsive
+  if (key === 'ingressos') {
+    const tr = document.createElement('tr');
+    tr.className = 'ingressos-desktop';
+    tr.innerHTML = `
+      <td><input type="text" value="${esc(d.desc)}" placeholder="Concepte"
+        oninput="updateField('ingressos',${idx},'desc',this.value)" style="min-width:130px"></td>
+      <td><input type="text" value="${esc(d.notes)}" placeholder="Mes/notes"
+        oninput="updateField('ingressos',${idx},'notes',this.value)" style="width:70px;font-size:12px;color:var(--muted)"></td>
+      <td class="num-cell"><input type="number" value="${d.previstPep||''}" min="0" step="0.01" placeholder="0,00"
+        style="border-color:#b3c8e8"
+        oninput="updateField('ingressos',${idx},'previstPep',parseFloat(this.value)||0)"></td>
+      <td class="num-cell"><input type="number" value="${d.previstDona||''}" min="0" step="0.01" placeholder="0,00"
+        style="border-color:#b8d8c8"
+        oninput="updateField('ingressos',${idx},'previstDona',parseFloat(this.value)||0)"></td>
+      <td class="num-cell"><input type="number" value="${d.realPep||''}" min="0" step="0.01" placeholder="0,00"
+        style="border-color:#b3c8e8;background:#f5f8fd"
+        oninput="updateField('ingressos',${idx},'realPep',parseFloat(this.value)||0)"></td>
+      <td class="num-cell"><input type="number" value="${d.realDona||''}" min="0" step="0.01" placeholder="0,00"
+        style="border-color:#b8d8c8;background:#f2f9f5"
+        oninput="updateField('ingressos',${idx},'realDona',parseFloat(this.value)||0)"></td>
+      <td><button class="btn-del" onclick="delRow('ingressos',${idx})">×</button></td>
+    `;
+
+    // Versió mòbil: dues files
+    const trM = document.createElement('tr');
+    trM.className = 'ingressos-mobile';
+    trM.innerHTML = `
+      <td colspan="7" style="padding:8px 11px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+          <input type="text" value="${esc(d.desc)}" placeholder="Concepte"
+            oninput="updateField('ingressos',${idx},'desc',this.value)" style="flex:1;margin-right:6px">
+          <input type="text" value="${esc(d.notes)}" placeholder="Mes"
+            oninput="updateField('ingressos',${idx},'notes',this.value)" style="width:60px;font-size:12px;color:var(--muted)">
+          <button class="btn-del" onclick="delRow('ingressos',${idx})" style="margin-left:6px">×</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px;font-size:11px">
+          <div><div style="color:#2d5a8e;font-weight:600;margin-bottom:2px">Pep prev.</div>
+            <input type="number" value="${d.previstPep||''}" min="0" step="0.01" placeholder="0,00"
+              style="border-color:#b3c8e8;font-size:12px"
+              oninput="updateField('ingressos',${idx},'previstPep',parseFloat(this.value)||0)"></div>
+          <div><div style="color:#3d7a5e;font-weight:600;margin-bottom:2px">Dona prev.</div>
+            <input type="number" value="${d.previstDona||''}" min="0" step="0.01" placeholder="0,00"
+              style="border-color:#b8d8c8;font-size:12px"
+              oninput="updateField('ingressos',${idx},'previstDona',parseFloat(this.value)||0)"></div>
+          <div><div style="color:#2d5a8e;font-weight:600;margin-bottom:2px">Pep real</div>
+            <input type="number" value="${d.realPep||''}" min="0" step="0.01" placeholder="0,00"
+              style="border-color:#b3c8e8;background:#f5f8fd;font-size:12px"
+              oninput="updateField('ingressos',${idx},'realPep',parseFloat(this.value)||0)"></div>
+          <div><div style="color:#3d7a5e;font-weight:600;margin-bottom:2px">Dona real</div>
+            <input type="number" value="${d.realDona||''}" min="0" step="0.01" placeholder="0,00"
+              style="border-color:#b8d8c8;background:#f2f9f5;font-size:12px"
+              oninput="updateField('ingressos',${idx},'realDona',parseFloat(this.value)||0)"></div>
+        </div>
+      </td>
+    `;
+
+    // Retornem un fragment amb les dues files
+    const frag = document.createDocumentFragment();
+    frag.appendChild(tr);
+    frag.appendChild(trM);
+    return frag;
+  }
+
+  // RESTA DE TAULES
+  const isDespesa = key === 'despeses';
+  const isOver = d.previst > 0 && d.real > d.previst;
+  const tr = document.createElement('tr');
+  if (isOver) tr.className = 'over-budget';
+
+  let tipusCell = '';
+  if (isDespesa) {
+    const t = d.tipus || 'mensual';
+    tipusCell = `<td class="type-cell">
+      <select onchange="updateField('${key}',${idx},'tipus',this.value)">
+        <option value="mensual" ${t==='mensual'?'selected':''}>×2 mensual</option>
+        <option value="puntual" ${t==='puntual'?'selected':''}>Puntual</option>
+      </select>
+    </td>`;
+  }
+
+  const overIcon = isOver ? `<span class="over-icon" title="Supera el previst!">⚠️</span>` : '';
+
+  tr.innerHTML = `
+    <td><input type="text" value="${esc(d.desc)}" placeholder="Descripció"
+      oninput="updateField('${key}',${idx},'desc',this.value)" style="min-width:110px">${overIcon}</td>
+    ${tipusCell}
+    <td><span class="notes-wrap" title="${esc(d.notes)}">
+      <input type="text" value="${esc(d.notes)}" placeholder="Notes"
+        oninput="updateField('${key}',${idx},'notes',this.value);this.closest('.notes-wrap').title=this.value"
+        style="min-width:80px;max-width:130px;font-size:12px;color:var(--muted)">
+    </span></td>
+    <td class="num-cell"><input type="number" value="${d.previst||''}" min="0" step="0.01" placeholder="0,00"
+      oninput="updateField('${key}',${idx},'previst',parseFloat(this.value)||0)"></td>
+    <td class="num-cell"><input type="number" value="${d.real||''}" min="0" step="0.01" placeholder="0,00"
+      oninput="updateField('${key}',${idx},'real',parseFloat(this.value)||0)"></td>
+    <td><button class="btn-del" onclick="delRow('${key}',${idx})">×</button></td>
+  `;
+  return tr;
+}
+
+function renderTable(key) {
+  const tbody = document.getElementById('tbody-'+key);
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  DATA[key].forEach((_,i) => {
+    const node = makeRow(key,i);
+    tbody.appendChild(node);
+  });
+}
+
+function addRow(key) {
+  let base;
+  if (key === 'ingressos') base = {desc:'',notes:'',previstPep:0,previstDona:0,realPep:0,realDona:0};
+  else if (key === 'despeses') base = {desc:'',notes:'',tipus:'mensual',previst:0,real:0};
+  else base = {desc:'',notes:'',previst:0,real:0};
+  DATA[key].push(base);
+  renderTable(key);
+}
+
+function delRow(key,idx) { DATA[key].splice(idx,1); renderTable(key); recalc(); }
+
+function updateField(key,idx,field,val) {
+  DATA[key][idx][field] = val;
+  if (key !== 'ingressos') {
+    const d = DATA[key][idx];
+    const tbody = document.getElementById('tbody-'+key);
+    if (tbody && tbody.rows[idx]) {
+      tbody.rows[idx].className = (d.previst > 0 && d.real > d.previst) ? 'over-budget' : '';
+    }
+  }
+  recalc();
+}
+
+// ============================
+//  CÀLCULS
+// ============================
+function sumPrev(key) {
+  if (key === 'ingressos') return DATA.ingressos.reduce((s,r)=>s+(r.previstPep||0)+(r.previstDona||0),0);
+  return DATA[key].reduce((s,r)=>s+(r.previst||0),0);
+}
+function sumReal(key) {
+  if (key === 'ingressos') return DATA.ingressos.reduce((s,r)=>s+(r.realPep||0)+(r.realDona||0),0);
+  return DATA[key].reduce((s,r)=>s+(r.real||0),0);
+}
+function sumPrevDespeses() {
+  return DATA.despeses.reduce((s,r) => {
+    const mult = (r.tipus||'mensual') === 'mensual' ? 2 : 1;
+    return s + (r.previst||0)*mult;
+  }, 0);
+}
+
+function setEl(id,val) { const e=document.getElementById(id); if(e) e.textContent=val; }
+
+function recalc() {
+  const banc = totalBanc();
+  setEl('total-banc-display', fmt(banc));
+  setEl('r-banc', fmt(banc));
+
+  const ingPrev = sumPrev('ingressos');
+  const ingReal = sumReal('ingressos');
+  setEl('hd-ingressos', fmt(ingPrev));
+  setEl('r-ing-prev', fmt(ingPrev));
+
+  const desPrev = sumPrevDespeses();
+  const desReal = sumReal('despeses');
+  setEl('hd-despeses', fmt(desPrev));
+
+  const normKeys = ['hotels','gasolina','apats','entrades','compres'];
+  let normPrev=0, normReal=0;
+  normKeys.forEach(k=>{
+    const p=sumPrev(k), r=sumReal(k);
+    normPrev+=p; normReal+=r;
+    setEl('hd-'+k, fmt(p));
+  });
+  setEl('hd-normandia-grand', fmt(normPrev)+' prev. / '+fmt(normReal)+' real');
+
+  const deltaPrev=sumPrev('delta'), deltaReal=sumReal('delta');
+  setEl('hd-delta', fmt(deltaPrev));
+
+  const altresPrev=sumPrev('altres'), altresReal=sumReal('altres');
+  setEl('hd-altres', fmt(altresPrev));
+
+  const totalDepPrev = desPrev+normPrev+deltaPrev+altresPrev;
+  const totalDepReal = desReal+normReal+deltaReal+altresReal;
+  setEl('r-dep-prev', fmt(totalDepPrev));
+  setEl('r-dep-real', fmt(totalDepReal));
+
+  const totalPositiu = banc + ingPrev;
+  setEl('r-total-positiu', fmt(totalPositiu));
+
+  const saldoPrev = banc + ingPrev - totalDepPrev;
+  const saldoReal = banc + ingReal - totalDepReal;
+  setEl('r-saldo-prev', fmt(saldoPrev));
+  setEl('r-saldo-real', fmt(saldoReal));
+
+  // Header
+  const hPrev = document.getElementById('header-saldo-prev');
+  const hReal = document.getElementById('header-saldo-real');
+  hPrev.textContent = fmt(saldoPrev);
+  hPrev.className = 'val '+(saldoPrev>=0?'pos':'neg');
+  hReal.textContent = fmt(saldoReal);
+  hReal.className = 'val '+(saldoReal>=0?'pos':'neg');
+
+  // Saldo box
+  document.getElementById('saldo-box').className = 'rbox '+(saldoPrev>=0?'rsaldo-pos':'rsaldo-neg');
+
+  // Progrés temporal
+  const avui = new Date();
+  const inici = new Date(2026,6,1); // 1 juliol
+  const fi = new Date(2026,7,31);   // 31 agost
+  const totalDies = (fi-inici)/(1000*60*60*24);
+  const diesPassats = Math.max(0,Math.min(totalDies,(avui-inici)/(1000*60*60*24)));
+  const pctTemps = Math.min(100,(diesPassats/totalDies*100));
+  const pctGastat = totalDepPrev>0 ? Math.min(110,(totalDepReal/totalDepPrev*100)) : 0;
+
+  document.getElementById('tbar-time').style.width = pctTemps+'%';
+  document.getElementById('tbar-spent').style.width = Math.min(100,pctGastat)+'%';
+
+  const diesRestants = Math.max(0,Math.ceil((fi-avui)/(1000*60*60*24)));
+  setEl('tbar-today-lbl', `Avui (${avui.toLocaleDateString('ca-ES',{day:'numeric',month:'short'})})`);
+
+  const stEl = document.getElementById('temporal-status');
+  let nouText = '';
+  let nouClass = 'temporal-status';
+  if (totalDepPrev === 0) {
+    nouText = 'Introdueix imports previstos per veure l\'evolució.';
+  } else {
+    const ritme = pctGastat - pctTemps;
+    if (ritme > 10) {
+      nouText = `⚠️ Atenció: has gastat el <strong>${pctGastat.toFixed(0)}%</strong> del pressupost i ha passat el ${pctTemps.toFixed(0)}% del temps. Vas per sobre del ritme. Queden <strong>${diesRestants} dies</strong>.`;
+      nouClass = 'temporal-status temporal-ko';
+    } else if (ritme < -10) {
+      nouText = `✅ Bé: has gastat el <strong>${pctGastat.toFixed(0)}%</strong> del pressupost i ha passat el ${pctTemps.toFixed(0)}% del temps. Vas per sota del ritme. Queden <strong>${diesRestants} dies</strong>.`;
+      nouClass = 'temporal-status temporal-ok';
+    } else {
+      nouText = `📊 Has gastat el <strong>${pctGastat.toFixed(0)}%</strong> del pressupost i ha passat el ${pctTemps.toFixed(0)}% del temps. Queden <strong>${diesRestants} dies</strong>.`;
+    }
+  }
+  if (stEl.innerHTML !== nouText) stEl.innerHTML = nouText;
+  if (stEl.className !== nouClass) stEl.className = nouClass;
+
+  // Alertes de desbordament
+  const alertes = [];
+  const totsBlocs = [
+    {clau:'despeses',nom:'Despeses fixes',real:desReal,prev:desPrev},
+    {clau:'normandia',nom:'Normandia',real:normReal,prev:normPrev},
+    {clau:'delta',nom:'Delta de l\'Ebre',real:deltaReal,prev:deltaPrev},
+    {clau:'altres',nom:'Altres despeses',real:altresReal,prev:altresPrev},
+  ];
+  totsBlocs.forEach(b => {
+    if (b.prev > 0 && b.real > b.prev) {
+      const excés = b.real - b.prev;
+      alertes.push(`<li><strong>${b.nom}</strong>: has superat el previst en ${fmt(excés)}</li>`);
+    }
+  });
+  const alertEl = document.getElementById('alert-container');
+  const nouAlert = alertes.length > 0
+    ? `<div class="alert-banner"><span class="alert-icon">⚠️</span><div><strong>Categories que han superat el pressupost:</strong><ul>${alertes.join('')}</ul></div></div>`
+    : '';
+  if (alertEl.innerHTML !== nouAlert) alertEl.innerHTML = nouAlert;
+
+  // Desglossament
+  renderDesglos([
+    {nom:'🏠 Despeses fixes',prev:desPrev,real:desReal,color:'#b94040'},
+    {nom:'🇫🇷 Normandia',prev:normPrev,real:normReal,color:'#4a5c8a'},
+    {nom:'🌊 Delta de l\'Ebre',prev:deltaPrev,real:deltaReal,color:'#3d7a5e'},
+    {nom:'🛒 Altres',prev:altresPrev,real:altresReal,color:'#c47c2b'},
+  ], totalDepPrev);
+
+  // Comptador dies fins viatges
+  const normInici = new Date(2026,6,11); // 11 juliol (estimat Normandia)
+  const deltaInici = new Date(2026,7,15); // 15 agost (estimat Delta)
+  const countEl = document.getElementById('viatges-countdown');
+  if (countEl) {
+    const diesNorm = Math.ceil((normInici - avui)/(1000*60*60*24));
+    const diesDelta = Math.ceil((deltaInici - avui)/(1000*60*60*24));
+    let pills = '';
+    if (diesNorm > 0) {
+      pills += `<div class="countdown-pill norm">🇫🇷 <div><div class="countdown-num">${diesNorm}</div><div style="font-size:10px">dies per Normandia</div></div></div>`;
+    } else if (diesNorm > -20) {
+      pills += `<div class="countdown-pill past">🇫🇷 Normandia en curs!</div>`;
+    }
+    if (diesDelta > 0) {
+      pills += `<div class="countdown-pill delta">🌊 <div><div class="countdown-num">${diesDelta}</div><div style="font-size:10px">dies per al Delta</div></div></div>`;
+    } else if (diesDelta > -10) {
+      pills += `<div class="countdown-pill past">🌊 Delta en curs!</div>`;
+    }
+    countEl.innerHTML = pills;
+  }
+
+  guardarDades();
+}
+
+function renderDesglos(blocs, total) {
+  const c = document.getElementById('desglos-container');
+  c.innerHTML = '';
+  blocs.forEach(b => {
+    const pct = total>0 ? Math.min(100,b.prev/total*100) : 0;
+    const pctReal = total>0 ? Math.min(110,b.real/total*100) : 0;
+    const diff = b.real - b.prev;
+    const diffTxt = diff===0 ? '' : fmtSign(diff < 0 ? diff : diff);
+    const diffCls = diff<=0 ? 'diff-ok' : 'diff-ko';
+    const overStyle = b.real>b.prev && b.prev>0 ? 'background:#fbeaea' : '';
+    c.innerHTML += `
+      <div class="desglos-row" style="${overStyle}">
+        <div class="desglos-nom">
+          <div class="desglos-dot" style="background:${b.color}"></div>
+          <div>
+            <div style="font-weight:500">${b.nom}</div>
+            <div class="desglos-prevista">${fmt(b.prev)} previst</div>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div class="desglos-real">${fmt(b.real)}</div>
+          ${diffTxt ? `<div class="${diffCls}">${diffTxt}</div>` : ''}
+        </div>
+      </div>
+      <div class="pbar-wrap"><div class="pbar" style="width:${pct}%;background:${b.color}"></div></div>
+      <div class="pbar-lbl">${pct.toFixed(0)}% del total previst</div>
+    `;
+  });
+}
+
+// ============================
+//  GUARDAT (localStorage)
+// ============================
+const SK = 'pressupost_estiu_2026_v3';
+let saveTimer = null;
+
+function setSaveStatus(s) {
+  const dot = document.getElementById('save-dot');
+  const txt = document.getElementById('save-txt');
+  if (s==='guardant') { dot.className='save-dot pendent'; txt.textContent='Guardant...'; }
+  else if (s==='guardat') {
+    dot.className='save-dot';
+    txt.textContent='Guardat automàticament a les '+new Date().toLocaleTimeString('ca-ES',{hour:'2-digit',minute:'2-digit'});
+  } else { dot.className='save-dot'; txt.textContent='Cap dada guardada encara'; }
+}
+
+function guardarDades() {
+  setSaveStatus('guardant');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    localStorage.setItem(SK, JSON.stringify({DATA,COMPTES,v:2}));
+    setSaveStatus('guardat');
+  }, 700);
+}
+
+function carregarDades() {
+  const raw = localStorage.getItem(SK);
+  if (!raw) { setSaveStatus('buit'); return; }
+  try {
+    const p = JSON.parse(raw);
+    if (p.DATA) {
+      Object.keys(p.DATA).forEach(k => {
+        if (DATA[k]) DATA[k].splice(0,DATA[k].length,...p.DATA[k]);
+      });
+    }
+    if (p.COMPTES) COMPTES.splice(0,COMPTES.length,...p.COMPTES);
+    setSaveStatus('guardat');
+  } catch(e) { setSaveStatus('buit'); }
+}
+
+function exportarJSON() {
+  const avuiStr = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  const blob = new Blob([JSON.stringify({DATA,COMPTES,v:2,exportat:new Date().toISOString()},null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `pressupost_estiu_2026_${avuiStr}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importarJSON(input) {
+  const f = input.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = e => {
+    try {
+      const p = JSON.parse(e.target.result);
+      if (p.DATA) Object.keys(p.DATA).forEach(k=>{ if(DATA[k]) DATA[k].splice(0,DATA[k].length,...p.DATA[k]); });
+      if (p.COMPTES) COMPTES.splice(0,COMPTES.length,...p.COMPTES);
+      ALL_KEYS.forEach(renderTable);
+      renderComptes();
+      recalc();
+      alert('✅ Dades importades correctament!');
+    } catch { alert('❌ El fitxer no és vàlid.'); }
+  };
+  r.readAsText(f);
+  input.value='';
+}
+
+function obrirModalEsborrar() {
+  const modal = document.getElementById('modal-esborrar');
+  const inp = document.getElementById('modal-input-esborrar');
+  inp.value = '';
+  document.getElementById('btn-confirm-del').classList.remove('actiu');
+  modal.style.display = 'flex';
+  setTimeout(()=>inp.focus(), 80);
+}
+function tancarModal() {
+  document.getElementById('modal-esborrar').style.display = 'none';
+}
+function validarModal(val) {
+  const btn = document.getElementById('btn-confirm-del');
+  if (val.trim().toUpperCase() === 'ESBORRAR') {
+    btn.classList.add('actiu');
+  } else {
+    btn.classList.remove('actiu');
+  }
+}
+function confirmarEsborrar() {
+  const inp = document.getElementById('modal-input-esborrar');
+  if (inp.value.trim().toUpperCase() !== 'ESBORRAR') return;
+  tancarModal();
+  localStorage.removeItem(SK);
+  location.reload();
+}
+function esborrarDades() {
+  obrirModalEsborrar();
+}
+
+// ============================
+//  TABS
+// ============================
+function showTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+
+// ============================
+//  EXPORTAR CSV
+// ============================
+function exportarCSV() {
+  const sep = ';';
+  const lines = [];
+  const encap = s => `"${String(s||'').replace(/"/g,'""')}"`;
+
+  // Capçalera general
+  lines.push(['PRESSUPOST ESTIU 2026 — Juliol/Agost'].map(encap).join(sep));
+  lines.push([`Exportat el ${new Date().toLocaleDateString('ca-ES')}`].map(encap).join(sep));
+  lines.push([]);
+
+  // Saldo banc
+  lines.push([encap('SALDO INICIAL AL BANC')]);
+  lines.push([encap('Compte'), encap('Saldo (€)')]);
+  COMPTES.forEach(c => lines.push([encap(c.nom), String(c.saldo||0).replace('.',',')]));
+  lines.push([encap('TOTAL BANC'), String(totalBanc()).replace('.',',')]);
+  lines.push([]);
+
+  // Ingressos
+  lines.push([encap('INGRESSOS')]);
+  lines.push([encap('Concepte'), encap('Mes'), encap('Pep previst'), encap('Dona previst'), encap('Pep real'), encap('Dona real'), encap('Total previst'), encap('Total real')]);
+  DATA.ingressos.forEach(r => {
+    const tp = (r.previstPep||0)+(r.previstDona||0);
+    const tr2 = (r.realPep||0)+(r.realDona||0);
+    lines.push([encap(r.desc), encap(r.notes),
+      String(r.previstPep||0).replace('.',','), String(r.previstDona||0).replace('.',','),
+      String(r.realPep||0).replace('.',','), String(r.realDona||0).replace('.',','),
+      String(tp).replace('.',','), String(tr2).replace('.',',')]);
+  });
+  lines.push([encap('TOTAL INGRESSOS'), '', '', '', '', '',
+    String(sumPrev('ingressos')).replace('.',','),
+    String(sumReal('ingressos')).replace('.',',')]);
+  lines.push([]);
+
+  // Despeses fixes
+  lines.push([encap('DESPESES FIXES')]);
+  lines.push([encap('Concepte'), encap('Tipus'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
+  DATA.despeses.forEach(r => {
+    const mult = (r.tipus||'mensual')==='mensual' ? 2 : 1;
+    lines.push([encap(r.desc), encap(r.tipus==='mensual'?'×2 mensual':'Puntual'), encap(r.notes),
+      String((r.previst||0)*mult).replace('.',','), String(r.real||0).replace('.',',')]);
+  });
+  lines.push([encap('TOTAL DESPESES FIXES'), '', '',
+    String(sumPrevDespeses()).replace('.',','),
+    String(sumReal('despeses')).replace('.',',')]);
+  lines.push([]);
+
+  // Normandia per subseccions
+  const normSecs = [
+    {key:'hotels', nom:'NORMANDIA — Hotels'},
+    {key:'gasolina', nom:'NORMANDIA — Gasolina i transport'},
+    {key:'apats', nom:'NORMANDIA — Àpats'},
+    {key:'entrades', nom:'NORMANDIA — Entrades i visites'},
+    {key:'compres', nom:'NORMANDIA — Compres i diversos'},
+  ];
+  let normPrevTotal=0, normRealTotal=0;
+  normSecs.forEach(s => {
+    lines.push([encap(s.nom)]);
+    lines.push([encap('Concepte'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
+    DATA[s.key].forEach(r => lines.push([encap(r.desc), encap(r.notes),
+      String(r.previst||0).replace('.',','), String(r.real||0).replace('.',',')]));
+    const p=sumPrev(s.key), re=sumReal(s.key);
+    normPrevTotal+=p; normRealTotal+=re;
+    lines.push([encap('Subtotal'), '', String(p).replace('.',','), String(re).replace('.',',')]);
+    lines.push([]);
+  });
+  lines.push([encap('TOTAL NORMANDIA'), '', String(normPrevTotal).replace('.',','), String(normRealTotal).replace('.',',')]);
+  lines.push([]);
+
+  // Delta
+  lines.push([encap('DELTA DE L\'EBRE')]);
+  lines.push([encap('Concepte'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
+  DATA.delta.forEach(r => lines.push([encap(r.desc), encap(r.notes),
+    String(r.previst||0).replace('.',','), String(r.real||0).replace('.',',')]));
+  lines.push([encap('TOTAL DELTA'), '', String(sumPrev('delta')).replace('.',','), String(sumReal('delta')).replace('.',',')]);
+  lines.push([]);
+
+  // Altres
+  lines.push([encap('ALTRES DESPESES')]);
+  lines.push([encap('Concepte'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
+  DATA.altres.forEach(r => lines.push([encap(r.desc), encap(r.notes),
+    String(r.previst||0).replace('.',','), String(r.real||0).replace('.',',')]));
+  lines.push([encap('TOTAL ALTRES'), '', String(sumPrev('altres')).replace('.',','), String(sumReal('altres')).replace('.',',')]);
+  lines.push([]);
+
+  // Resum final
+  const ingP=sumPrev('ingressos'), ingR=sumReal('ingressos');
+  const depP=sumPrevDespeses()+normPrevTotal+sumPrev('delta')+sumPrev('altres');
+  const depR=sumReal('despeses')+normRealTotal+sumReal('delta')+sumReal('altres');
+  const banc=totalBanc();
+  lines.push([encap('RESUM FINAL')]);
+  lines.push([encap('Concepte'), encap('Previst (€)'), encap('Real (€)')]);
+  lines.push([encap('Saldo inicial banc'), String(banc).replace('.',','), String(banc).replace('.',',')]);
+  lines.push([encap('+ Ingressos futurs'), String(ingP).replace('.',','), String(ingR).replace('.',',')]);
+  lines.push([encap('− Total despeses'), String(depP).replace('.',','), String(depR).replace('.',',')]);
+  lines.push([encap('= SALDO FINAL'), String(banc+ingP-depP).replace('.',','), String(banc+ingR-depR).replace('.',',')]);
+
+  const csv = lines.map(l => Array.isArray(l) ? l.join(sep) : l).join('\n');
+  const avuiCsvStr = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  const bom = '\uFEFF'; // BOM per Excel llegeixi bé els accents
+  const blob = new Blob([bom+csv], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `pressupost_estiu_2026_${avuiCsvStr}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ============================
+//  IMPRIMIR PDF RESUM
+// ============================
+function imprimirResum() {
+  const banc = totalBanc();
+  const ingP = sumPrev('ingressos'), ingR = sumReal('ingressos');
+  const desP = sumPrevDespeses(), desR = sumReal('despeses');
+  const normKeys = ['hotels','gasolina','apats','entrades','compres'];
+  const normP = normKeys.reduce((s,k)=>s+sumPrev(k),0);
+  const normR = normKeys.reduce((s,k)=>s+sumReal(k),0);
+  const deltaP = sumPrev('delta'), deltaR = sumReal('delta');
+  const altresP = sumPrev('altres'), altresR = sumReal('altres');
+  const totDepP = desP+normP+deltaP+altresP;
+  const totDepR = desR+normR+deltaR+altresR;
+  const saldoP = banc+ingP-totDepP;
+  const saldoR = banc+ingR-totDepR;
+
+  const avui = new Date().toLocaleDateString('ca-ES',{day:'numeric',month:'long',year:'numeric'});
+
+  const filaBoc = (nom,p,r) => {
+    const diff = r-p;
+    const diffTxt = p>0 ? (diff<=0?`<span style="color:#2e7d5c">▼ ${fmt(Math.abs(diff))}</span>`:`<span style="color:#b94040">▲ ${fmt(diff)}</span>`) : '—';
+    return `<tr>
+      <td>${nom}</td>
+      <td style="text-align:right;color:#555">${fmt(p)}</td>
+      <td style="text-align:right;font-weight:600">${fmt(r)}</td>
+      <td style="text-align:right;font-size:12px">${diffTxt}</td>
+    </tr>`;
+  };
+
+  const comptesHTML = COMPTES.map(c=>`<tr><td>${c.nom}</td><td style="text-align:right;font-weight:600">${fmt(c.saldo||0)}</td></tr>`).join('');
+
+  const html = `<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Resum Pressupost Estiu 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&display=swap');
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter',sans-serif; font-size:13px; color:#1a1a18; background:white; padding:32px 40px; }
+  h1 { font-family:'Playfair Display',serif; font-size:24px; color:#2d5a8e; margin-bottom:4px; }
+  .sub { font-size:12px; color:#888; margin-bottom:28px; }
+  h2 { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:#2d5a8e; margin:22px 0 8px; border-bottom:2px solid #2d5a8e; padding-bottom:4px; }
+  table { width:100%; border-collapse:collapse; margin-bottom:4px; }
+  th { background:#f0f4fa; padding:7px 10px; text-align:left; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:#555; }
+  td { padding:7px 10px; border-bottom:1px solid #eee; }
+  tr:last-child td { border-bottom:none; }
+  .saldo-box { margin-top:24px; border-radius:8px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; }
+  .saldo-box.pos { background:#d0eedf; border:1px solid #86cba8; }
+  .saldo-box.neg { background:#fbd8d8; border:1px solid #e8bbbb; }
+  .saldo-lbl { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:#444; }
+  .saldo-vals { text-align:right; }
+  .saldo-prev { font-size:13px; color:#555; }
+  .saldo-real { font-size:26px; font-weight:800; color:${saldoR>=0?'#1a5c3a':'#8b2020'}; }
+  .peu { margin-top:32px; font-size:11px; color:#aaa; text-align:center; border-top:1px solid #eee; padding-top:12px; }
+  @media print { body { padding:20px 28px; } }
+</style>
+</head>
+<body>
+<h1>☀️ Pressupost Estiu 2026</h1>
+<div class="sub">Resum imprès generat el ${avui} · Juliol – 31 d'agost 2026</div>
+
+<h2>🏦 Saldo inicial al banc</h2>
+<table>
+  <thead><tr><th>Compte</th><th style="text-align:right">Saldo</th></tr></thead>
+  <tbody>
+    ${comptesHTML}
+    <tr style="font-weight:700;background:#f0f4fa"><td>TOTAL BANC</td><td style="text-align:right">${fmt(banc)}</td></tr>
+  </tbody>
+</table>
+
+<h2>💰 Ingressos futurs</h2>
+<table>
+  <thead><tr><th>Concepte</th><th style="text-align:right">Previst</th><th style="text-align:right">Real</th><th style="text-align:right">Diferència</th></tr></thead>
+  <tbody>
+    ${DATA.ingressos.map(r=>{
+      const p=(r.previstPep||0)+(r.previstDona||0);
+      const re=(r.realPep||0)+(r.realDona||0);
+      return `<tr><td>${r.desc}${r.notes?' <span style="color:#999;font-size:11px">(${r.notes})</span>':''}</td><td style="text-align:right">${fmt(p)}</td><td style="text-align:right;font-weight:600">${fmt(re)}</td><td></td></tr>`;
+    }).join('')}
+    <tr style="font-weight:700;background:#f0f4fa"><td>TOTAL INGRESSOS</td><td style="text-align:right">${fmt(ingP)}</td><td style="text-align:right">${fmt(ingR)}</td><td></td></tr>
+  </tbody>
+</table>
+
+<h2>📤 Despeses per blocs</h2>
+<table>
+  <thead><tr><th>Bloc</th><th style="text-align:right">Previst</th><th style="text-align:right">Real gastat</th><th style="text-align:right">Diferència</th></tr></thead>
+  <tbody>
+    ${filaBoc('🏠 Despeses fixes (juliol+agost)',desP,desR)}
+    ${filaBoc('🇫🇷 Normandia',normP,normR)}
+    ${filaBoc('🌊 Delta de l\'Ebre',deltaP,deltaR)}
+    ${filaBoc('🛒 Altres despeses',altresP,altresR)}
+    <tr style="font-weight:700;background:#f0f4fa">
+      <td>TOTAL DESPESES</td>
+      <td style="text-align:right">${fmt(totDepP)}</td>
+      <td style="text-align:right">${fmt(totDepR)}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="saldo-box ${saldoR>=0?'pos':'neg'}">
+  <div>
+    <div class="saldo-lbl">🏁 Saldo final al 31 d'agost</div>
+    <div class="saldo-prev">Previst: ${fmt(saldoP)}</div>
+  </div>
+  <div class="saldo-vals">
+    <div style="font-size:11px;color:#666;margin-bottom:2px">Saldo real ara</div>
+    <div class="saldo-real">${fmt(saldoR)}</div>
+  </div>
+</div>
+
+<div class="peu">Pressupost Estiu 2026 · Generat automàticament</div>
+</body>
+</html>`;
+
+  const finestra = window.open('','_blank','width=800,height:900');
+  finestra.document.write(html);
+  finestra.document.close();
+  finestra.focus();
+  setTimeout(()=>{ finestra.print(); }, 600);
+}
+
+// ============================
+//  ENTRADA RÀPIDA
+// ============================
+let tipusEntradaActual = 'despesa';
+
+function obrirEntrada() {
+  setTipusEntrada('despesa');
+  document.getElementById('entrada-bloc').value = 'despeses';
+  actualitzarSubbloc();
+  document.getElementById('entrada-import').value = '';
+  document.getElementById('entrada-nota').value = '';
+  document.getElementById('entrada-overlay').style.display = 'flex';
+  setTimeout(() => document.getElementById('entrada-import').focus(), 80);
+}
+
+function tancarEntrada() {
+  document.getElementById('entrada-overlay').style.display = 'none';
+}
+
+function setTipusEntrada(tipus) {
+  tipusEntradaActual = tipus;
+  const btnOk = document.getElementById('btn-entrada-ok');
+  const tDes = document.getElementById('toggle-despesa');
+  const tIng = document.getElementById('toggle-ingres');
+  const campBloc = document.getElementById('camp-bloc');
+  const campSubbloc = document.getElementById('camp-subbloc');
+  const bloc = document.getElementById('entrada-bloc');
+
+  if (tipus === 'despesa') {
+    tDes.className = 'actiu-despesa'; tIng.className = '';
+    btnOk.textContent = 'Afegir despesa'; btnOk.className = 'btn-entrada-ok';
+    campBloc.style.display = '';
+    bloc.innerHTML = `
+      <option value="despeses">🏠 Despeses fixes</option>
+      <option value="normandia">🇫🇷 Normandia</option>
+      <option value="delta">🌊 Delta de l'Ebre</option>
+      <option value="altres">🛒 Altres</option>`;
+    actualitzarSubbloc();
+  } else {
+    tIng.className = 'actiu-ingres'; tDes.className = '';
+    btnOk.textContent = 'Afegir ingrés'; btnOk.className = 'btn-entrada-ok ok-ingres';
+    campBloc.style.display = 'none';
+    campSubbloc.style.display = 'none';
+  }
+}
+
+function actualitzarSubbloc() {
+  const bloc = document.getElementById('entrada-bloc').value;
+  const campSub = document.getElementById('camp-subbloc');
+  campSub.style.display = bloc === 'normandia' ? '' : 'none';
+}
+
+function confirmarEntrada() {
+  const importVal = parseFloat(document.getElementById('entrada-import').value) || 0;
+  if (importVal <= 0) {
+    document.getElementById('entrada-import').focus();
+    document.getElementById('entrada-import').style.borderColor = 'var(--red)';
+    setTimeout(() => document.getElementById('entrada-import').style.borderColor = '', 1200);
+    return;
+  }
+  const nota = document.getElementById('entrada-nota').value.trim();
+  const desc = nota || (tipusEntradaActual === 'despesa' ? 'Despesa ràpida' : 'Ingrés ràpid');
+
+  if (tipusEntradaActual === 'ingres') {
+    // Afegir als ingressos com a entrada ràpida (Pep)
+    DATA.ingressos.push({
+      desc, notes: new Date().toLocaleDateString('ca-ES',{day:'numeric',month:'short'}),
+      previstPep: 0, previstDona: 0, realPep: importVal, realDona: 0
+    });
+    renderTable('ingressos');
+    mostrarFeedback(`✅ +${fmt(importVal)} afegit als ingressos`);
+  } else {
+    const bloc = document.getElementById('entrada-bloc').value;
+    const key = bloc === 'normandia'
+      ? document.getElementById('entrada-subbloc').value
+      : bloc;
+    DATA[key].push({
+      desc, notes: new Date().toLocaleDateString('ca-ES',{day:'numeric',month:'short'}),
+      previst: 0, real: importVal,
+      ...(key === 'despeses' ? {tipus: 'puntual'} : {})
+    });
+    renderTable(key);
+    const nomBloc = {despeses:'Despeses fixes', hotels:'Normandia·Hotels', gasolina:'Normandia·Transport',
+      apats:'Normandia·Àpats', entrades:'Normandia·Entrades', compres:'Normandia·Compres',
+      delta:"Delta de l'Ebre", altres:'Altres'}[key] || key;
+    mostrarFeedback(`✅ −${fmt(importVal)} afegit a ${nomBloc}`);
+  }
+
+  recalc();
+  tancarEntrada();
+}
+
+function mostrarFeedback(msg) {
+  const el = document.getElementById('entrada-feedback');
+  el.textContent = msg;
+  el.style.display = 'block';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.display = 'none'; }, 2800);
+}
+
+// ============================
+//  INICI
+// ============================
+const ALL_KEYS = ['ingressos','despeses','hotels','gasolina','apats','entrades','compres','delta','altres'];
+carregarDades();
+ALL_KEYS.forEach(renderTable);
+renderComptes();
+recalc();
+
+// Registrar Service Worker (PWA)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// Tancar modal amb Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { tancarModal(); tancarEntrada(); }
+  if (e.key === 'Enter' && document.getElementById('modal-esborrar').style.display !== 'none') {
+    confirmarEsborrar();
+  }
+  if (e.key === 'Enter' && document.getElementById('entrada-overlay').style.display !== 'none') {
+    confirmarEntrada();
+  }
+});
+</script>
+</body>
+</html>
