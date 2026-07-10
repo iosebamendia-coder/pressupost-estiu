@@ -69,9 +69,9 @@
 
   /* CARDS */
   .card { background:var(--surface); border:1px solid var(--border); border-radius:10px; margin-bottom:18px; overflow:hidden; }
-  .card-header { padding:13px 18px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); background:var(--bg); }
+  .card-header { padding:13px 18px; display:flex; flex-direction:column; align-items:flex-start; gap:4px; border-bottom:1px solid var(--border); background:var(--bg); }
   .card-title { font-weight:600; font-size:14px; display:flex; align-items:center; gap:7px; }
-  .card-total { font-weight:700; font-size:15px; }
+  .card-total { font-weight:700; font-size:13px; }
   .ct-income { color:var(--green); } .ct-expense { color:var(--red); }
   .ct-norm { color:var(--normandia); } .ct-delta { color:var(--delta); }
 
@@ -197,7 +197,7 @@
 
   .entrada-overlay { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:600; display:flex; align-items:flex-end; justify-content:center; padding:0; }
   @media (min-width:500px) { .entrada-overlay { align-items:center; padding:16px; } }
-  .entrada-box { background:white; border-radius:16px 16px 0 0; padding:24px 24px 32px; width:100%; max-width:460px; box-shadow:0 -4px 30px rgba(0,0,0,.2); }
+  .entrada-box { background:white; border-radius:16px 16px 0 0; padding:24px 24px 32px; width:100%; max-width:460px; box-shadow:0 -4px 30px rgba(0,0,0,.2); max-height:90vh; overflow-y:auto; }
   @media (min-width:500px) { .entrada-box { border-radius:16px; } }
   .entrada-title { font-size:16px; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px; }
   .entrada-toggle { display:flex; background:#f0f0ee; border-radius:8px; padding:3px; margin-bottom:16px; }
@@ -253,24 +253,21 @@
       <button id="toggle-ingres" onclick="setTipusEntrada('ingres')">💰 Ingrés</button>
     </div>
 
-    <div class="entrada-field" id="camp-bloc">
-      <label>Bloc</label>
-      <select id="entrada-bloc" onchange="actualitzarSubbloc()">
+    <div class="entrada-field" id="camp-cat">
+      <label>Categoria</label>
+      <select id="entrada-cat">
         <option value="despeses">🏠 Despeses fixes</option>
-        <option value="normandia">🇫🇷 Normandia</option>
-        <option value="delta">🌊 Delta de l'Ebre</option>
+        <option value="hotels">🏨 Normandia · Allotjament</option>
+        <option value="gasolina">⛽ Normandia · Gasolina i transport</option>
+        <option value="apats">🍽️ Normandia · Àpats</option>
+        <option value="entrades">🎟️ Normandia · Entrades i visites</option>
+        <option value="compres">🛍️ Normandia · Compres i diversos</option>
+        <option value="delta_hotels">🏨 Delta · Allotjament</option>
+        <option value="delta_gasolina">⛽ Delta · Gasolina i transport</option>
+        <option value="delta_apats">🍽️ Delta · Àpats</option>
+        <option value="delta_entrades">🎟️ Delta · Entrades i visites</option>
+        <option value="delta_compres">🛍️ Delta · Compres i diversos</option>
         <option value="altres">🛒 Altres</option>
-      </select>
-    </div>
-
-    <div class="entrada-field" id="camp-subbloc" style="display:none">
-      <label>Subcategoria Normandia</label>
-      <select id="entrada-subbloc">
-        <option value="hotels">🏨 Allotjament</option>
-        <option value="gasolina">⛽ Gasolina i transport</option>
-        <option value="apats">🍽️ Àpats</option>
-        <option value="entrades">🎟️ Entrades i visites</option>
-        <option value="compres">🛍️ Compres i diversos</option>
       </select>
     </div>
 
@@ -518,12 +515,54 @@
   <div class="panel" id="panel-delta">
     <div class="card" style="border-color:#b8d8c8">
       <div class="card-header" style="background:var(--delta-light)">
-        <div class="card-title">🌊 Delta de l'Ebre – Totes les despeses</div>
-        <div class="card-total ct-delta" id="hd-delta">0,00 €</div>
+        <div class="card-title">🏨 Allotjament</div>
+        <div class="card-total ct-delta" id="hd-delta_hotels">0,00 €</div>
       </div>
       <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
-      <tbody id="tbody-delta"></tbody></table>
-      <button class="btn-add" onclick="addRow('delta')">+ Afegir despesa Delta</button>
+      <tbody id="tbody-delta_hotels"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta_hotels')">+ Afegir allotjament</button>
+    </div>
+    <div class="card" style="border-color:#b8d8c8">
+      <div class="card-header" style="background:var(--delta-light)">
+        <div class="card-title">⛽ Gasolina i transport</div>
+        <div class="card-total ct-delta" id="hd-delta_gasolina">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-delta_gasolina"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta_gasolina')">+ Afegir transport</button>
+    </div>
+    <div class="card" style="border-color:#b8d8c8">
+      <div class="card-header" style="background:var(--delta-light)">
+        <div class="card-title">🍽️ Àpats i restaurants</div>
+        <div class="card-total ct-delta" id="hd-delta_apats">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-delta_apats"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta_apats')">+ Afegir àpat</button>
+    </div>
+    <div class="card" style="border-color:#b8d8c8">
+      <div class="card-header" style="background:var(--delta-light)">
+        <div class="card-title">🎟️ Entrades, visites i activitats</div>
+        <div class="card-total ct-delta" id="hd-delta_entrades">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Visita / Activitat</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-delta_entrades"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta_entrades')">+ Afegir visita</button>
+    </div>
+    <div class="card" style="border-color:#b8d8c8">
+      <div class="card-header" style="background:var(--delta-light)">
+        <div class="card-title">🛍️ Compres i diversos</div>
+        <div class="card-total ct-delta" id="hd-delta_compres">0,00 €</div>
+      </div>
+      <table><thead><tr><th>Concepte</th><th>Notes</th><th class="num-cell">Previst (€)</th><th class="num-cell">Real (€)</th><th style="width:30px"></th></tr></thead>
+      <tbody id="tbody-delta_compres"></tbody></table>
+      <button class="btn-add" onclick="addRow('delta_compres')">+ Afegir compra</button>
+    </div>
+    <div class="card" style="border-color:#b8d8c8;background:var(--delta-light)">
+      <div class="card-header" style="background:#d5e8dd;border-color:#b8d8c8">
+        <div class="card-title" style="color:var(--delta)">🌊 TOTAL DELTA</div>
+        <div class="card-total ct-delta" style="font-size:17px" id="hd-delta-grand">0,00 €</div>
+      </div>
     </div>
   </div>
 
@@ -555,63 +594,18 @@ const DATA = {
     {desc:'Paga extra estiu',notes:'',previstPep:0,previstDona:0,realPep:0,realDona:0},
     {desc:'Altres ingressos',notes:'',previstPep:0,previstDona:0,realPep:0,realDona:0},
   ],
-  despeses: [
-    {desc:'Electricitat',notes:'',tipus:'mensual',previst:80,real:0},
-    {desc:'Gas',notes:'',tipus:'mensual',previst:30,real:0},
-    {desc:'Telèfon / internet',notes:'',tipus:'mensual',previst:50,real:0},
-    {desc:'Comunitat',notes:'',tipus:'mensual',previst:0,real:0},
-    {desc:'Assegurances',notes:'',tipus:'puntual',previst:0,real:0},
-    {desc:'Alimentació domèstica',notes:'Quan no sou de viatge',tipus:'mensual',previst:300,real:0},
-    {desc:'Farmàcia',notes:'',tipus:'mensual',previst:50,real:0},
-    {desc:'Transport local',notes:'Benzina, aparcament...',tipus:'mensual',previst:80,real:0},
-  ],
-  hotels: [
-    {desc:'Hotel 1',notes:'Normandia – Ruta A',previst:0,real:0},
-    {desc:'Hotel 2',notes:'Normandia – Ruta B',previst:0,real:0},
-    {desc:'Hotel 3',notes:'Normandia – Ruta C',previst:0,real:0},
-  ],
-  gasolina: [
-    {desc:'Gasolina anada (Granollers→Normandia)',notes:'Aprox. ~1.200 km',previst:0,real:0},
-    {desc:'Gasolina tornada (Normandia→Granollers)',notes:'',previst:0,real:0},
-    {desc:'Gasolina desplaçaments interiors',notes:'Visites, excursions',previst:0,real:0},
-    {desc:'Peatges',notes:'Autopistes França/Espanya',previst:0,real:0},
-    {desc:'Pàrquing',notes:'',previst:0,real:0},
-  ],
-  apats: [
-    {desc:'Esmorzars',notes:'Fora o inclosos a l\'hotel',previst:0,real:0},
-    {desc:'Dinars',notes:'',previst:0,real:0},
-    {desc:'Sopars',notes:'',previst:0,real:0},
-    {desc:'Cafès i aperitius',notes:'',previst:0,real:0},
-    {desc:'Supermercats / pícnics',notes:'',previst:0,real:0},
-  ],
-  entrades: [
-    {desc:'Mont-Saint-Michel',notes:'',previst:0,real:0},
-    {desc:'Platges del Desembarcament',notes:'Museus, memorials',previst:0,real:0},
-    {desc:'Bayeux (Tapís)',notes:'',previst:0,real:0},
-    {desc:'Altres museus / visites',notes:'',previst:0,real:0},
-    {desc:'Activitats / excursions',notes:'',previst:0,real:0},
-  ],
-  compres: [
-    {desc:'Souvenirs',notes:'',previst:0,real:0},
-    {desc:'Roba / calçat',notes:'',previst:0,real:0},
-    {desc:'Farmàcia de viatge',notes:'',previst:0,real:0},
-    {desc:'Imprevistos Normandia',notes:'Marge de seguretat',previst:0,real:0},
-  ],
-  delta: [
-    {desc:'Allotjament',notes:'Hotel, càmping, rural...',previst:0,real:0},
-    {desc:'Gasolina anada/tornada',notes:'Aprox. ~250 km',previst:0,real:0},
-    {desc:'Àpats',notes:'',previst:0,real:0},
-    {desc:'Activitats (barques, bicicletes...)',notes:'',previst:0,real:0},
-    {desc:'Entrades i visites',notes:'',previst:0,real:0},
-    {desc:'Compres i divers',notes:'',previst:0,real:0},
-  ],
-  altres: [
-    {desc:'Roba d\'estiu',notes:'',previst:0,real:0},
-    {desc:'Oci local (cines, restaurants)',notes:'',previst:0,real:0},
-    {desc:'Regals',notes:'',previst:0,real:0},
-    {desc:'Salut / metge',notes:'',previst:0,real:0},
-    {desc:'Imprevistos generals',notes:'Marge de seguretat',previst:0,real:0},
-  ],
+  despeses: [],
+  hotels: [],
+  gasolina: [],
+  apats: [],
+  entrades: [],
+  compres: [],
+  delta_hotels: [],
+  delta_gasolina: [],
+  delta_apats: [],
+  delta_entrades: [],
+  delta_compres: [],
+  altres: [],
 };
 
 let COMPTES = [
@@ -818,6 +812,22 @@ function sumPrevDespeses() {
 
 function setEl(id,val) { const e=document.getElementById(id); if(e) e.textContent=val; }
 
+// Escriu "Previst X · Gastat Y · Queda Z" a una capçalera, amb Z en vermell si és negatiu
+function setCapcalera(id, prev, real) {
+  const e = document.getElementById(id);
+  if (!e) return;
+  const queda = prev - real;
+  const negatiu = queda < 0;
+  const etiqueta = negatiu ? 'Passat' : 'Queda';
+  const colorQueda = negatiu ? 'var(--red)' : 'var(--green)';
+  e.innerHTML =
+    `<span style="opacity:.7">Previst ${fmt(prev)}</span>` +
+    ` <span style="opacity:.4">·</span> ` +
+    `<span>Gastat ${fmt(real)}</span>` +
+    ` <span style="opacity:.4">·</span> ` +
+    `<span style="color:${colorQueda};font-weight:700">${etiqueta} ${fmt(Math.abs(queda) === 0 ? 0 : (negatiu ? -Math.abs(queda) : queda))}</span>`;
+}
+
 function recalc() {
   const banc = totalBanc();
   setEl('total-banc-display', fmt(banc));
@@ -830,22 +840,28 @@ function recalc() {
 
   const desPrev = sumPrevDespeses();
   const desReal = sumReal('despeses');
-  setEl('hd-despeses', fmt(desPrev));
+  setCapcalera('hd-despeses', desPrev, desReal);
 
   const normKeys = ['hotels','gasolina','apats','entrades','compres'];
   let normPrev=0, normReal=0;
   normKeys.forEach(k=>{
     const p=sumPrev(k), r=sumReal(k);
     normPrev+=p; normReal+=r;
-    setEl('hd-'+k, fmt(p));
+    setCapcalera('hd-'+k, p, r);
   });
-  setEl('hd-normandia-grand', fmt(normPrev)+' prev. / '+fmt(normReal)+' real');
+  setCapcalera('hd-normandia-grand', normPrev, normReal);
 
-  const deltaPrev=sumPrev('delta'), deltaReal=sumReal('delta');
-  setEl('hd-delta', fmt(deltaPrev));
+  const deltaKeys = ['delta_hotels','delta_gasolina','delta_apats','delta_entrades','delta_compres'];
+  let deltaPrev=0, deltaReal=0;
+  deltaKeys.forEach(k=>{
+    const p=sumPrev(k), r=sumReal(k);
+    deltaPrev+=p; deltaReal+=r;
+    setCapcalera('hd-'+k, p, r);
+  });
+  setCapcalera('hd-delta-grand', deltaPrev, deltaReal);
 
   const altresPrev=sumPrev('altres'), altresReal=sumReal('altres');
-  setEl('hd-altres', fmt(altresPrev));
+  setCapcalera('hd-altres', altresPrev, altresReal);
 
   const totalDepPrev = desPrev+normPrev+deltaPrev+altresPrev;
   const totalDepReal = desReal+normReal+deltaReal+altresReal;
@@ -1167,12 +1183,26 @@ function exportarCSV() {
   lines.push([encap('TOTAL NORMANDIA'), '', String(normPrevTotal).replace('.',','), String(normRealTotal).replace('.',',')]);
   lines.push([]);
 
-  // Delta
-  lines.push([encap('DELTA DE L\'EBRE')]);
-  lines.push([encap('Concepte'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
-  DATA.delta.forEach(r => lines.push([encap(r.desc), encap(r.notes),
-    String(r.previst||0).replace('.',','), String(r.real||0).replace('.',',')]));
-  lines.push([encap('TOTAL DELTA'), '', String(sumPrev('delta')).replace('.',','), String(sumReal('delta')).replace('.',',')]);
+  // Delta per subseccions
+  const deltaSecs = [
+    {key:'delta_hotels', nom:'DELTA — Allotjament'},
+    {key:'delta_gasolina', nom:'DELTA — Gasolina i transport'},
+    {key:'delta_apats', nom:'DELTA — Àpats'},
+    {key:'delta_entrades', nom:'DELTA — Entrades i visites'},
+    {key:'delta_compres', nom:'DELTA — Compres i diversos'},
+  ];
+  let deltaPrevTotal=0, deltaRealTotal=0;
+  deltaSecs.forEach(s => {
+    lines.push([encap(s.nom)]);
+    lines.push([encap('Concepte'), encap('Notes'), encap('Previst (€)'), encap('Real (€)')]);
+    DATA[s.key].forEach(r => lines.push([encap(r.desc), encap(r.notes),
+      String(r.previst||0).replace('.',','), String(r.real||0).replace('.',',')]));
+    const p=sumPrev(s.key), re=sumReal(s.key);
+    deltaPrevTotal+=p; deltaRealTotal+=re;
+    lines.push([encap('Subtotal'), '', String(p).replace('.',','), String(re).replace('.',',')]);
+    lines.push([]);
+  });
+  lines.push([encap('TOTAL DELTA'), '', String(deltaPrevTotal).replace('.',','), String(deltaRealTotal).replace('.',',')]);
   lines.push([]);
 
   // Altres
@@ -1185,8 +1215,8 @@ function exportarCSV() {
 
   // Resum final
   const ingP=sumPrev('ingressos'), ingR=sumReal('ingressos');
-  const depP=sumPrevDespeses()+normPrevTotal+sumPrev('delta')+sumPrev('altres');
-  const depR=sumReal('despeses')+normRealTotal+sumReal('delta')+sumReal('altres');
+  const depP=sumPrevDespeses()+normPrevTotal+deltaPrevTotal+sumPrev('altres');
+  const depR=sumReal('despeses')+normRealTotal+deltaRealTotal+sumReal('altres');
   const banc=totalBanc();
   lines.push([encap('RESUM FINAL')]);
   lines.push([encap('Concepte'), encap('Previst (€)'), encap('Real (€)')]);
@@ -1216,7 +1246,9 @@ function imprimirResum() {
   const normKeys = ['hotels','gasolina','apats','entrades','compres'];
   const normP = normKeys.reduce((s,k)=>s+sumPrev(k),0);
   const normR = normKeys.reduce((s,k)=>s+sumReal(k),0);
-  const deltaP = sumPrev('delta'), deltaR = sumReal('delta');
+  const deltaKeys = ['delta_hotels','delta_gasolina','delta_apats','delta_entrades','delta_compres'];
+  const deltaP = deltaKeys.reduce((s,k)=>s+sumPrev(k),0);
+  const deltaR = deltaKeys.reduce((s,k)=>s+sumReal(k),0);
   const altresP = sumPrev('altres'), altresR = sumReal('altres');
   const totDepP = desP+normP+deltaP+altresP;
   const totDepR = desR+normR+deltaR+altresR;
@@ -1337,8 +1369,7 @@ let tipusEntradaActual = 'despesa';
 
 function obrirEntrada() {
   setTipusEntrada('despesa');
-  document.getElementById('entrada-bloc').value = 'despeses';
-  actualitzarSubbloc();
+  document.getElementById('entrada-cat').value = 'despeses';
   document.getElementById('entrada-import').value = '';
   document.getElementById('entrada-nota').value = '';
   document.getElementById('entrada-overlay').style.display = 'flex';
@@ -1354,32 +1385,17 @@ function setTipusEntrada(tipus) {
   const btnOk = document.getElementById('btn-entrada-ok');
   const tDes = document.getElementById('toggle-despesa');
   const tIng = document.getElementById('toggle-ingres');
-  const campBloc = document.getElementById('camp-bloc');
-  const campSubbloc = document.getElementById('camp-subbloc');
-  const bloc = document.getElementById('entrada-bloc');
+  const campCat = document.getElementById('camp-cat');
 
   if (tipus === 'despesa') {
     tDes.className = 'actiu-despesa'; tIng.className = '';
     btnOk.textContent = 'Afegir despesa'; btnOk.className = 'btn-entrada-ok';
-    campBloc.style.display = '';
-    bloc.innerHTML = `
-      <option value="despeses">🏠 Despeses fixes</option>
-      <option value="normandia">🇫🇷 Normandia</option>
-      <option value="delta">🌊 Delta de l'Ebre</option>
-      <option value="altres">🛒 Altres</option>`;
-    actualitzarSubbloc();
+    campCat.style.display = '';
   } else {
     tIng.className = 'actiu-ingres'; tDes.className = '';
     btnOk.textContent = 'Afegir ingrés'; btnOk.className = 'btn-entrada-ok ok-ingres';
-    campBloc.style.display = 'none';
-    campSubbloc.style.display = 'none';
+    campCat.style.display = 'none';
   }
-}
-
-function actualitzarSubbloc() {
-  const bloc = document.getElementById('entrada-bloc').value;
-  const campSub = document.getElementById('camp-subbloc');
-  campSub.style.display = bloc === 'normandia' ? '' : 'none';
 }
 
 function confirmarEntrada() {
@@ -1402,10 +1418,7 @@ function confirmarEntrada() {
     renderTable('ingressos');
     mostrarFeedback(`✅ +${fmt(importVal)} afegit als ingressos`);
   } else {
-    const bloc = document.getElementById('entrada-bloc').value;
-    const key = bloc === 'normandia'
-      ? document.getElementById('entrada-subbloc').value
-      : bloc;
+    const key = document.getElementById('entrada-cat').value;
     DATA[key].push({
       desc, notes: new Date().toLocaleDateString('ca-ES',{day:'numeric',month:'short'}),
       previst: 0, real: importVal,
@@ -1414,7 +1427,8 @@ function confirmarEntrada() {
     renderTable(key);
     const nomBloc = {despeses:'Despeses fixes', hotels:'Normandia·Hotels', gasolina:'Normandia·Transport',
       apats:'Normandia·Àpats', entrades:'Normandia·Entrades', compres:'Normandia·Compres',
-      delta:"Delta de l'Ebre", altres:'Altres'}[key] || key;
+      delta_hotels:'Delta·Allotjament', delta_gasolina:'Delta·Transport', delta_apats:'Delta·Àpats',
+      delta_entrades:'Delta·Entrades', delta_compres:'Delta·Compres', altres:'Altres'}[key] || key;
     mostrarFeedback(`✅ −${fmt(importVal)} afegit a ${nomBloc}`);
   }
 
@@ -1433,7 +1447,7 @@ function mostrarFeedback(msg) {
 // ============================
 //  INICI
 // ============================
-const ALL_KEYS = ['ingressos','despeses','hotels','gasolina','apats','entrades','compres','delta','altres'];
+const ALL_KEYS = ['ingressos','despeses','hotels','gasolina','apats','entrades','compres','delta_hotels','delta_gasolina','delta_apats','delta_entrades','delta_compres','altres'];
 carregarDades();
 ALL_KEYS.forEach(renderTable);
 renderComptes();

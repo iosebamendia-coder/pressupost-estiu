@@ -1,4 +1,4 @@
-const CACHE = 'pressupost-estiu-v2';
+const CACHE = 'pressupost-estiu-v5';
 const FITXERS = [
   './',
   './index.html',
