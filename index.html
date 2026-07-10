@@ -77,6 +77,9 @@
 
   /* TABLE */
   table { width:100%; border-collapse:collapse; }
+  /* Taules de categoria: scroll lateral al mòbil si no hi caben */
+  .taula-cat { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .taula-cat thead, .taula-cat tbody { display:table; width:100%; min-width:430px; }
   th { padding:7px 11px; text-align:left; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); background:#faf9f7; border-bottom:1px solid var(--border); }
   th:nth-last-child(-n+2), td:nth-last-child(-n+2) { text-align:right; }
   td { padding:8px 11px; border-bottom:1px solid #f0ede8; vertical-align:middle; }
@@ -88,7 +91,7 @@
   input[type="number"], input[type="text"] { border:1px solid var(--border); border-radius:5px; padding:5px 7px; font-family:'Inter',sans-serif; font-size:13px; color:var(--text); background:white; width:100%; transition:border-color .15s; }
   input[type="number"]:focus, input[type="text"]:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(45,90,142,.1); }
   select { border:1px solid var(--border); border-radius:5px; padding:5px 6px; font-family:'Inter',sans-serif; font-size:12px; color:var(--text); background:white; cursor:pointer; }
-  .num-cell { width:130px; }
+  .num-cell { width:100px; }
   .type-cell { width:80px; }
 
   .btn-add { display:flex; align-items:center; justify-content:center; gap:6px; padding:7px 14px; margin:9px 11px; border:1px dashed var(--border); border-radius:6px; background:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); transition:all .15s; width:calc(100% - 22px); }
@@ -1452,6 +1455,13 @@ carregarDades();
 ALL_KEYS.forEach(renderTable);
 renderComptes();
 recalc();
+
+// Activar scroll lateral a les taules de categoria (totes menys ingressos)
+ALL_KEYS.filter(k => k !== 'ingressos').forEach(k => {
+  const tb = document.getElementById('tbody-'+k);
+  const taula = tb && tb.closest('table');
+  if (taula) taula.classList.add('taula-cat');
+});
 
 // Registrar Service Worker (PWA)
 if ('serviceWorker' in navigator) {
