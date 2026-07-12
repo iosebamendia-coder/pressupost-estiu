@@ -26,7 +26,9 @@
   body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.5; min-height:100vh; padding-bottom:60px; }
 
   /* HEADER */
-  .header { background:var(--accent); color:white; padding:20px 32px 16px; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.15); }
+  /* Contenidor fix a dalt: header + barra + pestanyes, tot junt */
+  .topfix { position:sticky; top:0; z-index:100; }
+  .header { background:var(--accent); color:white; padding:20px 32px 16px; box-shadow:0 2px 12px rgba(0,0,0,.15); }
   .header-inner { max-width:980px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
   .header h1 { font-family:'Playfair Display',serif; font-size:20px; font-weight:600; }
   .header .subtitle { font-size:11px; opacity:.7; margin-top:2px; }
@@ -51,7 +53,7 @@
   .btn-sa.danger:hover { background:#b94040; border-color:#b94040; }
 
   /* TABS */
-  .tabs { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:79px; z-index:90; }
+  .tabs { background:var(--surface); border-bottom:1px solid var(--border); }
   .tabs-inner { max-width:980px; margin:0 auto; display:flex; overflow-x:auto; }
   .tab-btn { padding:11px 18px; border:none; background:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:13px; font-weight:500; color:var(--muted); border-bottom:2px solid transparent; white-space:nowrap; transition:all .15s; }
   .tab-btn:hover { color:var(--accent); }
@@ -232,8 +234,16 @@
 
   /* RESPONSIVE */
   @media (max-width:600px) {
-    .header-inner { flex-direction:column; align-items:flex-start; }
-    .header-right { flex-wrap:wrap; }
+    /* Header compacte: sempre visible a dalt amb els dos saldos */
+    .header { padding:10px 14px 9px; }
+    .header-inner { flex-direction:column; align-items:stretch; gap:8px; }
+    .header h1 { font-size:15px; margin:0; }
+    .header .subtitle { display:none; }      /* estalvia alçada */
+    .header .btn-print { display:none; }     /* no cal al mòbil */
+    .header-right { display:flex; gap:10px; flex-wrap:nowrap; }
+    .header-stat { flex:1; min-width:0; background:rgba(255,255,255,.12); border-radius:8px; padding:5px 8px; }
+    .header-stat .lbl { font-size:9.5px; opacity:.85; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .header-stat .val { font-size:14px; }
     th, td { padding:6px 7px; }
     .num-cell { width:105px; }
     .type-cell { width:70px; }
@@ -302,6 +312,7 @@
   </div>
 </div>
 
+<div class="topfix">
 <div class="header">
   <div class="header-inner">
     <div>
@@ -348,6 +359,8 @@
     <button class="tab-btn" onclick="showTab('altres',this)">🛒 Altres</button>
   </div>
 </div>
+
+</div><!-- /topfix -->
 
 <div class="main">
 
@@ -815,20 +828,22 @@ function sumPrevDespeses() {
 
 function setEl(id,val) { const e=document.getElementById(id); if(e) e.textContent=val; }
 
-// Escriu "Previst X · Gastat Y · Queda Z" a una capçalera, amb Z en vermell si és negatiu
+// Escriu "Previst X · Gastat Y · Queda Z" a una capçalera.
+// El "queda" va en color neutre (no verd: som en despeses, el verd despista).
+// Només es tenyeix de vermell si t'has passat del previst.
 function setCapcalera(id, prev, real) {
   const e = document.getElementById(id);
   if (!e) return;
   const queda = prev - real;
   const negatiu = queda < 0;
   const etiqueta = negatiu ? 'Passat' : 'Queda';
-  const colorQueda = negatiu ? 'var(--red)' : 'var(--green)';
+  const colorQueda = negatiu ? 'var(--red)' : 'inherit';
   e.innerHTML =
     `<span style="opacity:.7">Previst ${fmt(prev)}</span>` +
     ` <span style="opacity:.4">·</span> ` +
     `<span>Gastat ${fmt(real)}</span>` +
     ` <span style="opacity:.4">·</span> ` +
-    `<span style="color:${colorQueda};font-weight:700">${etiqueta} ${fmt(Math.abs(queda) === 0 ? 0 : (negatiu ? -Math.abs(queda) : queda))}</span>`;
+    `<span style="color:${colorQueda};font-weight:700">${etiqueta} ${fmt(negatiu ? -Math.abs(queda) : queda)}</span>`;
 }
 
 function recalc() {
